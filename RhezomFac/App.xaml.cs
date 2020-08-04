@@ -1,30 +1,45 @@
-﻿using System;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using RhezomFac.Services;
 using RhezomFac.Views;
+using RhezomFac.Views.Login;
 
 namespace RhezomFac
 {
     public partial class App : Application
     {
+        public static string BaseImageUrl { get; } = "https://cdn.syncfusion.com/essential-ui-kit-for-xamarin.forms/common/uikitimages/";
 
         public App()
         {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mjk4NjY3QDMxMzgyZTMyMmUzMGRRWXBhU0ZOWWwzb3FvUFJmRFBTRVdQaUprODhxNUtIampXWUlKN3lyWFk9;Mjk4NjY4QDMxMzgyZTMyMmUzMEJ0ZTZJOTJtY2N1Z2w2MGEvTEVFWnNocjJRZVk0UnIyRUpPVDkyTkJWZE09");
+
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
-            MainPage = new MainPage();
+            //Page racine de l'application
+            //MainPage = new MainPage();
+            MainPage = new SimpleLoginPage();
         }
 
+        /// <summary>
+        /// Lorsque l'app d�bute.
+        /// </summary>
         protected override void OnStart()
         {
         }
 
+        /// <summary>
+        /// Lorsque l'application entre en veille
+        /// </summary>
         protected override void OnSleep()
         {
         }
 
+        /// <summary>
+        /// Lorsque l'app sort de la veille.
+        /// </summary>
         protected override void OnResume()
         {
         }
