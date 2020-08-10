@@ -6,34 +6,6 @@ namespace RhezomFac.Models
 {
     public class Document
     {
-        #region constructeur(s)
-        //constr par def
-        public Document() { }
-        public Document(string logo, DateTime date, string numTVAClient, string numTVAEntr, string adrClient, string adrEntr, string pays, string bCE, string iBAN, string bIC, string numTelFixe, string numMobile, string numFax, string mailEntr, string mailClient, string lienWeb, List<string> listeProd, int qtiteProd, float totalHT, float totalTVA, string infoAdd)
-        {
-            this._logo = logo;
-            this._date = date;
-            this._numTVAClient = numTVAClient;
-            this._numTVAEntr = numTVAEntr;
-            this._adrClient = adrClient;
-            this._adrEntr = adrEntr;
-            this._pays = pays;
-            this._BCE = bCE;
-            this._IBAN = iBAN;
-            this._BIC = bIC;
-            this._numTelFixe = numTelFixe;
-            this._numMobile = numMobile;
-            this._numFax = numFax;
-            this._mailEntr = mailEntr;
-            this._mailClient = mailClient;
-            this._lienWeb = lienWeb;
-            this._listeProd = listeProd;
-            this._qtiteProd = qtiteProd;
-            this._totalHT = totalHT;
-            this._totalTVA = totalTVA;
-            this._infoAdd = infoAdd;
-        }
-        #endregion
 
 
         #region variables
@@ -210,6 +182,34 @@ namespace RhezomFac.Models
 
         #endregion
 
+        #region constructeur(s)
+        //constr par def
+        public Document() { }
+        public Document(string logo, DateTime date, string numTVAClient, string numTVAEntr, string adrClient, string adrEntr, string pays, string bCE, string iBAN, string bIC, string numTelFixe, string numMobile, string numFax, string mailEntr, string mailClient, string lienWeb, List<string> listeProd, int qtiteProd, float totalHT, float totalTVA, string infoAdd)
+        {
+            this._logo = logo;
+            this._date = date;
+            this._numTVAClient = numTVAClient;
+            this._numTVAEntr = numTVAEntr;
+            this._adrClient = adrClient;
+            this._adrEntr = adrEntr;
+            this._pays = pays;
+            this._BCE = bCE;
+            this._IBAN = iBAN;
+            this._BIC = bIC;
+            this._numTelFixe = numTelFixe;
+            this._numMobile = numMobile;
+            this._numFax = numFax;
+            this._mailEntr = mailEntr;
+            this._mailClient = mailClient;
+            this._lienWeb = lienWeb;
+            this._listeProd = listeProd;
+            this._qtiteProd = qtiteProd;
+            this._totalHT = totalHT;
+            this._totalTVA = totalTVA;
+            this._infoAdd = infoAdd;
+        }
+        #endregion
 
         #region methodes
 

@@ -6,16 +6,7 @@ namespace RhezomFac.Models
 {
     public class Produit
     {
-        #region constructeur
-        public Produit(string nom, string description, int qtiteRest, float prixHT, float tauxTVA)
-        {
-            this._nom = nom;
-            this._description = description;
-            this._qtiteRest = qtiteRest;
-            this._prixHT = prixHT;
-            this._tauxTVA = tauxTVA;
-        }
-        #endregion
+
 
         #region variables
         private string _nom;
@@ -62,6 +53,18 @@ namespace RhezomFac.Models
 
 
         #endregion
+
+        #region constructeur
+        public Produit(string nom, string description, int qtiteRest, float prixHT, float tauxTVA)
+        {
+            this._nom = nom;
+            this._description = description;
+            this._qtiteRest = qtiteRest;
+            this._prixHT = prixHT;
+            this._tauxTVA = tauxTVA;
+        }
+        #endregion
+
         #region methodes
         #endregion
     }

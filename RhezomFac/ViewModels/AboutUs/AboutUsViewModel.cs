@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using RhezomFac.Models.AboutUs;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -16,11 +15,11 @@ namespace RhezomFac.ViewModels.AboutUs
 
         private string productDescription;
 
-        private string productVersion;
+        //private string productVersion;
 
-        private string productIcon;
+        private Image productIcon;
 
-        private string cardsTopImage;
+        private Image cardsTopImage;
 
         #endregion
 
@@ -32,68 +31,26 @@ namespace RhezomFac.ViewModels.AboutUs
         public AboutUsViewModel()
         {
             this.productDescription =
-                "Situated in the heart of Smith-town, Acme Products, Inc., has a long-standing tradition of selling the best products while providing the fastest service on the market. Since 1952, we’ve helped our customers identify their needs, understand their wants, and capture their dreams.";
-            this.productIcon = App.BaseImageUrl + "Icon.png";
-            this.productVersion = "1.0";
-            this.cardsTopImage = App.BaseImageUrl + "Mask.png";
+                "Rhezom vous souhaite la bienvenue Site web : \nhttps://www.rhezom.com (En maintenance)\nRhezom est un studio de jeux vidéo basé en Belgique, dans le Hainaut. (Trazegnies) \nNos services:\n - Développement de jeux vidéo\n - Des formations dans le développement(Logiciel / Jeux ) \nN'hésitez pas à prendre contact avec nous pour toutes questions, nous sommes là pour vous répondre :\ninfo@rhezom.com \n+32 (0)455/10.56.31 \n+32 (0)71/12.63.85";
+            this.productIcon = new Image { Source = "rhezom.png" };
+            //this.productVersion = "1.0";
+            //this.cardsTopImage = App.BaseImageUrl + "Mask.png";
 
-            this.EmployeeDetails = new ObservableCollection<AboutUsModel>
-            {
-                new AboutUsModel
-                {
-                    EmployeeName = "Alice",
-                    Image = App.BaseImageUrl + "ProfileImage15.png",
-                    Designation = "Project Manager"
-                },
-                new AboutUsModel
-                {
-                    EmployeeName = "Jessica Park",
-                    Image = App.BaseImageUrl + "ProfileImage10.png",
-                    Designation = "Senior Manager"
-                },
-                new AboutUsModel
-                {
-                    EmployeeName = "Lisa",
-                    Image = App.BaseImageUrl + "ProfileImage11.png",
-                    Designation = "Senior Developer"
-                },
-                new AboutUsModel
-                {
-                    EmployeeName = "Rebecca",
-                    Image = App.BaseImageUrl + "ProfileImage12.png",
-                    Designation = "Senior Designer"
-                },
-                new AboutUsModel
-                {
-                    EmployeeName = "Alexander",
-                    Image = App.BaseImageUrl + "ProfileImage3.png",
-                    Designation = "Senior Manager"
-                },
-                new AboutUsModel
-                {
-                    EmployeeName = "Anthony",
-                    Image = App.BaseImageUrl + "ProfileImage1.png",
-                    Designation = "Senior Developer"
-                },
-                new AboutUsModel
-                {
-                    EmployeeName = "Danielle",
-                    Image = App.BaseImageUrl + "ProfileImage7.png",
-                    Designation = "Senior Developer"
-                },
-                 new AboutUsModel
-                {
-                    EmployeeName = "Kyle Greene",
-                    Image = App.BaseImageUrl + "ProfileImage6.png",
-                    Designation = "Senior Developer"
-                },
-                  new AboutUsModel
-                {
-                    EmployeeName = "Navya Sharma",
-                    Image = App.BaseImageUrl + "ProfileImage13.png",
-                    Designation = "Testing Engineer"
-                }
-            };
+            //this.EmployeeDetails = new ObservableCollection<AboutUsModel>
+            //{
+            //    new AboutUsModel
+            //    {
+            //        EmployeeName = "Alice",
+            //        Image = new Image { Source = "rhezom.png" },
+            //        Designation = "Project Manager"
+            //    }
+            //    //new AboutUsModel
+            //    //{
+            //    //    EmployeeName = "Jessica Park",
+            //    //    Image = App.BaseImageUrl + "ProfileImage10.png",
+            //    //    Designation = "Senior Manager"
+            //    //}
+            //};
 
             this.ItemSelectedCommand = new Command(this.ItemSelected);
         }
@@ -106,7 +63,7 @@ namespace RhezomFac.ViewModels.AboutUs
         /// Gets or sets the top image source of the About us with cards view.
         /// </summary>
         /// <value>Image source location.</value>
-        public string CardsTopImage
+        public Image CardsTopImage
         {
             get
             {
@@ -118,11 +75,6 @@ namespace RhezomFac.ViewModels.AboutUs
                 this.cardsTopImage = value;
                 this.NotifyPropertyChanged();
             }
-        }
-
-        private void NotifyPropertyChanged()
-        {
-            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -147,7 +99,7 @@ namespace RhezomFac.ViewModels.AboutUs
         /// Gets or sets the product icon.
         /// </summary>
         /// <value>The product icon.</value>
-        public string ProductIcon
+        public Image ProductIcon
         {
             get
             {
@@ -165,25 +117,25 @@ namespace RhezomFac.ViewModels.AboutUs
         /// Gets or sets the product version.
         /// </summary>
         /// <value>The product version.</value>
-        public string ProductVersion
-        {
-            get
-            {
-                return this.productVersion;
-            }
+        //public string ProductVersion
+        //{
+        //    get
+        //    {
+        //        return this.productVersion;
+        //    }
 
-            set
-            {
-                this.productVersion = value;
-                this.NotifyPropertyChanged();
-            }
-        }
+        //    set
+        //    {
+        //        this.productVersion = value;
+        //        this.NotifyPropertyChanged();
+        //    }
+        //}
 
         /// <summary>
         /// Gets or sets the employee details.
         /// </summary>
         /// <value>The employee details.</value>
-        public ObservableCollection<AboutUsModel> EmployeeDetails { get; set; }
+        //public ObservableCollection<AboutUsModel> EmployeeDetails { get; set; }
 
         /// <summary>
         /// Gets or sets the command that will be executed when an item is selected.

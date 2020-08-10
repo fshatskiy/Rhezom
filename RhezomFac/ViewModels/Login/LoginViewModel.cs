@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms.Internals;
+﻿using Xamarin.Forms.Internals;
 
 namespace RhezomFac.ViewModels.Login
 {
@@ -39,11 +38,6 @@ namespace RhezomFac.ViewModels.Login
                 this.email = value;
                 this.NotifyPropertyChanged();
             }
-        }
-
-        private void NotifyPropertyChanged()
-        {
-            throw new NotImplementedException();
         }
 
         /// <summary>

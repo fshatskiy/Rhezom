@@ -16,7 +16,7 @@ namespace RhezomFac.ViewModels.Login
         /// </summary>
         public ForgotPasswordViewModel()
         {
-            //this.SignUpCommand = new Command(this.SignUpClicked);
+            this.SignUpCommand = new Command(this.SignUpClicked);
             this.SendCommand = new Command(this.SendClicked);
         }
 
@@ -29,10 +29,10 @@ namespace RhezomFac.ViewModels.Login
         /// </summary>
         public Command SendCommand { get; set; }
 
-        ///// <summary>
-        ///// Gets or sets the command that is executed when the Sign Up button is clicked.
-        ///// </summary>
-        //public Command SignUpCommand { get; set; }
+        /// <summary>
+        /// Gets or sets the command that is executed when the Sign Up button is clicked.
+        /// </summary>
+        public Command SignUpCommand { get; set; }
 
         #endregion
 
@@ -47,14 +47,14 @@ namespace RhezomFac.ViewModels.Login
             // Do something
         }
 
-        ///// <summary>
-        ///// invoked when the sign up button is clicked.
-        ///// </summary>
-        ///// <param name="obj">the object</param>
-        //private void signupclicked(object obj)
-        //{
-        //    // do something
-        //}
+        /// <summary>
+        /// Invoked when the Sign Up button is clicked.
+        /// </summary>
+        /// <param name="obj">The Object</param>
+        private void SignUpClicked(object obj)
+        {
+            // Do something
+        }
 
         #endregion
     }

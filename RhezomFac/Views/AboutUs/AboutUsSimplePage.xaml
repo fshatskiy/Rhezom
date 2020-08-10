@@ -38,18 +38,18 @@
                     </Image>
 
                     <!--  Product version  -->
-                    <Label
+                    <!--<Label
                         Margin="0,8.7,0,0"
                         HorizontalOptions="CenterAndExpand"
                         Style="{StaticResource VersionLabelStyle}"
-                        Text="{Binding ProductVersion, StringFormat='Version {0}'}" />
+                        Text="{Binding ProductVersion, StringFormat='Version {0}'}" />-->
 
                     <!--  Product title  -->
                     <Label
                         FontFamily="{StaticResource Montserrat-SemiBold}"
                         HorizontalOptions="CenterAndExpand"
                         Style="{StaticResource HeaderLabelStyle}"
-                        Text="Acme Products">
+                        Text="Rhezom">
                         <Label.Margin>
                             <OnIdiom
                                 x:TypeArguments="Thickness"

@@ -6,15 +6,7 @@ namespace RhezomFac.Models
 {
     public class Personne
     {
-        #region constructeur
-        public Personne(string adresse, string mail, string tel, string numTVA)
-        {
-            this._adresse = adresse;
-            this._mail = mail;
-            this._tel = tel;
-            this._numTVA = numTVA;
-        }
-        #endregion
+
         #region variables
         private string _adresse;
 
@@ -46,7 +38,24 @@ namespace RhezomFac.Models
 
 
         #endregion
+
+        #region constructeur
+        public Personne(string adresse,
+                        string mail,
+                        string tel,
+                        string numTVA)
+        {
+            this._adresse = adresse;
+            this._mail = mail;
+            this._tel = tel;
+            this._numTVA = numTVA;
+        }
+        #endregion
+
         #region methodes
+
+
+
         #endregion
     }
 }

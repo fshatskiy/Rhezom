@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -27,6 +26,7 @@ namespace RhezomFac.ViewModels.Login
             this.LoginCommand = new Command(this.LoginClicked);
             this.SignUpCommand = new Command(this.SignUpClicked);
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
+            this.SocialMediaLoginCommand = new Command(this.SocialLoggedIn);
         }
 
         #endregion
@@ -55,11 +55,6 @@ namespace RhezomFac.ViewModels.Login
             }
         }
 
-        private void NotifyPropertyChanged()
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
 
         #region Command
@@ -78,6 +73,11 @@ namespace RhezomFac.ViewModels.Login
         /// Gets or sets the command that is executed when the Forgot Password button is clicked.
         /// </summary>
         public Command ForgotPasswordCommand { get; set; }
+
+        /// <summary>
+        /// Gets or sets the command that is executed when the social media login button is clicked.
+        /// </summary>
+        public Command SocialMediaLoginCommand { get; set; }
 
         #endregion
 
@@ -111,6 +111,15 @@ namespace RhezomFac.ViewModels.Login
             label.BackgroundColor = Color.FromHex("#70FFFFFF");
             await Task.Delay(100);
             label.BackgroundColor = Color.Transparent;
+        }
+
+        /// <summary>
+        /// Invoked when social media login button is clicked.
+        /// </summary>
+        /// <param name="obj">The Object</param>
+        private void SocialLoggedIn(object obj)
+        {
+            // Do something
         }
 
         #endregion

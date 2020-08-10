@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="RhezomFac.Views.Parametres.Parametres"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:helper="clr-namespace:RhezomFac.Helpers"
+    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.Parametres" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    BackgroundColor="{DynamicResource Gray-White}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <viewModel:ParametresViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+
+
+        <!--  bouton back  -->
+
+        <!--<StackLayout x:Name="TitleView"  Padding="8,8" HeightRequest="64"  Grid.Row="0"
+                         BackgroundColor="{DynamicResource Gray-White}" Spacing="0"
+                         HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+
+            <StackLayout x:Name="Title" HorizontalOptions="FillAndExpand"  IsVisible="True"
+                             Orientation="Horizontal"  VerticalOptions="FillAndExpand"  Spacing="0">
+
+                --><!--  Back button command  --><!--
+                <buttons:SfButton  x:Name="backButton"  Command="{Binding BackButtonCommand}"
+                                       CommandParameter="{x:Reference backButton}" CornerRadius="4"
+                                       Style="{StaticResource IconButtonStyle}" Text="{StaticResource Back}"/>
+
+                --><!--  Movie List page Title  --><!--
+                <Label  Margin="16,0" FontFamily="{StaticResource Montserrat-Medium}" FontSize="16"
+                            HorizontalOptions="CenterAndExpand" TextColor="{DynamicResource Gray-900}"
+                            LineHeight="1.25"  VerticalOptions="Center" VerticalTextAlignment="Center" />
+
+            </StackLayout>-->
+
+
+
+
+
+
+        <ScrollView>
+            <StackLayout Spacing="0">
+
+                <BoxView Margin="0,0,0,8" Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Grid for Modifier les données de l'entreprise label and icon  -->
+                <Grid
+                    x:Name="HomeGrid"
+                    BackgroundColor="{DynamicResource Gray-White}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        helper:RTLHelper.Margin="16, 0, 8, 0"
+                        Style="{StaticResource ProfileIconLabelStyle}" />
+                        <!--Text="{StaticResource Home}"-->
+                        <!--TextColor="{DynamicResource PrimaryColor}"-->
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,20"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="17"
+                        Style="{StaticResource ProfileLabelStyle}"
+                        Text="Modifier les données de l'entreprise" />
+                        <!--TextColor="{DynamicResource PrimaryColor}"-->
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HomeCommand}" CommandParameter="{x:Reference HomeGrid}" />
+                    </Grid.GestureRecognizers>
+
+                </Grid>
+
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Grid for Modifier le logo label and icon  -->
+                <Grid
+                    x:Name="InterestsGrid"
+                    BackgroundColor="{DynamicResource Gray-White}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        helper:RTLHelper.Margin="16, 0, 8, 0"
+                        Style="{StaticResource ProfileIconLabelStyle}" />
+                        <!--Text="{StaticResource Interests}"-->
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,20"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="17"
+                        Style="{StaticResource ProfileLabelStyle}"
+                        Text="Modifier le logo" />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding InterestsCommand}" CommandParameter="{x:Reference InterestsGrid}" />
+                    </Grid.GestureRecognizers>
+
+                </Grid>
+
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Grid for Conditions d'utilisation label and icon  -->
+                <Grid
+                    x:Name="BookmarkGrid"
+                    BackgroundColor="{DynamicResource Gray-White}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        helper:RTLHelper.Margin="16, 0, 8, 0"
+                        Style="{StaticResource ProfileIconLabelStyle}" />
+                        <!--Text="{StaticResource ClearBookmark}"-->
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,20"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="17"
+                        Style="{StaticResource ProfileLabelStyle}"
+                        Text="Conditions d'utilisation" />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BookmarkCommand}" CommandParameter="{x:Reference BookmarkGrid}" />
+                    </Grid.GestureRecognizers>
+
+                </Grid>
+
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Grid for Changer mon mot de passe label and icon  -->
+                <Grid
+                    x:Name="ActivityGrid"
+                    BackgroundColor="{DynamicResource Gray-White}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        helper:RTLHelper.Margin="16, 0, 8, 0"
+                        Style="{StaticResource ProfileIconLabelStyle}" />
+                        <!--Text="{StaticResource Activity}"-->
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,20"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="17"
+                        Style="{StaticResource ProfileLabelStyle}"
+                        Text="Changer mon mot de passe" />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ActivityCommand}" CommandParameter="{x:Reference ActivityGrid}" />
+                    </Grid.GestureRecognizers>
+
+                </Grid>
+
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Grid for Se déconnecter label and icon  -->
+                <Grid
+                    x:Name="ProfileGrid"
+                    BackgroundColor="{DynamicResource Gray-White}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        helper:RTLHelper.Margin="16, 0, 8, 0"
+                        Style="{StaticResource ProfileIconLabelStyle}" />
+                        <!--Text="{StaticResource Profile}"-->
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,20"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="17"
+                        Style="{StaticResource ProfileLabelStyle}"
+                        Text="Se déconnecter" />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ProfileCommand}" CommandParameter="{x:Reference ProfileGrid}" />
+                    </Grid.GestureRecognizers>
+
+                </Grid>
+
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+            </StackLayout>
+
+        </ScrollView>
+        <!--</StackLayout>-->
+    </ContentPage.Content>
+</ContentPage>

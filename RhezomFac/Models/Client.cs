@@ -6,15 +6,6 @@ namespace RhezomFac.Models
 {
     public class Client : Personne
     {
-        #region constructeur
-        public Client(string nom, string prenom, int numClient, string adresse, string mail, string tel, string numTVA)
-            : base( adresse,  mail,  tel,  numTVA)
-        {
-            this._nom = nom;
-            this._prenom = prenom;
-            this._numClient = numClient;
-        }
-        #endregion
         #region variables
         private string _nom;
 
@@ -42,6 +33,26 @@ namespace RhezomFac.Models
 
 
         #endregion
+
+        #region constructeur
+        public Client(string nom,
+                      string prenom,
+                      int numClient,
+                      string adresse,
+                      string mail,
+                      string tel,
+                      string numTVA)
+            : base(adresse,
+                    mail,
+                    tel,
+                    numTVA)
+        {
+            this._nom = nom;
+            this._prenom = prenom;
+            this._numClient = numClient;
+        }
+        #endregion
+
         #region methodes
         #endregion
     }

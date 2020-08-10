@@ -27,7 +27,7 @@ namespace RhezomFac.Models
         /// </summary>
         public string ImagePath
         {
-            get { return App.BaseImageUrl + this.imagePath; }
+            get { return this.imagePath; }
             set { this.imagePath = value; }
         }
 

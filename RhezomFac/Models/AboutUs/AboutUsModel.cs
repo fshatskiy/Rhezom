@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 namespace RhezomFac.Models.AboutUs
@@ -11,11 +12,11 @@ namespace RhezomFac.Models.AboutUs
     {
         #region Fields
 
-        private string employeeName;
+        //private string employeeName;
 
         private string designation;
 
-        private string image;
+        private Image image;
 
         #endregion
 
@@ -34,19 +35,19 @@ namespace RhezomFac.Models.AboutUs
         /// Gets or sets the name of an employee.
         /// </summary>
         /// <value>The name.</value>
-        public string EmployeeName
-        {
-            get
-            {
-                return this.employeeName;
-            }
+        //public string EmployeeName
+        //{
+        //    get
+        //    {
+        //        return this.employeeName;
+        //    }
 
-            set
-            {
-                this.employeeName = value;
-                this.OnPropertyChanged(nameof(EmployeeName));
-            }
-        }
+        //    set
+        //    {
+        //        this.employeeName = value;
+        //        this.OnPropertyChanged(nameof(EmployeeName));
+        //    }
+        //}
 
         /// <summary>
         /// Gets or sets the designation of an employee.
@@ -70,7 +71,7 @@ namespace RhezomFac.Models.AboutUs
         /// Gets or sets the image of an employee.
         /// </summary>
         /// <value>The image.</value>
-        public string Image
+        public Image Image
         {
             get
             {

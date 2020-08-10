@@ -1,20 +1,19 @@
-﻿using Xamarin.Forms;
-using Xamarin.Forms.Internals;
+﻿using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace RhezomFac.Views.Parametres
 {
     /// <summary>
-    /// Page to show the setting.
+    /// Page to show article master page
     /// </summary>
     [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SettingPage : ContentPage
+    public partial class Parametres
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SettingPage" /> class.
+        /// Initializes a new instance of the <see cref="Parametres" /> class.
         /// </summary>
-        public SettingPage()
+        public Parametres()
         {
             InitializeComponent();
         }

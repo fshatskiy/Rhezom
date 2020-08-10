@@ -1,16 +1,19 @@
 ﻿using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
-namespace RhezomFac.Views.Detail
+namespace RhezomFac.Views.Accueil
 {
     /// <summary>
-    /// Page to show the event details.
+    /// Page to show article master page
     /// </summary>
     [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EventDetailPage
+    public partial class Accueil
     {
-        public EventDetailPage()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Accueil" /> class.
+        /// </summary>
+        public Accueil()
         {
             InitializeComponent();
         }
