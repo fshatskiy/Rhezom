@@ -1,6 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using RhezomFac.Views.Accueil;
+using RhezomFac.Views.Forms;
+using RhezomFac.Views.Login;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+//using RhezomFac.Views.AccueilPage;
 
 namespace RhezomFac.ViewModels.Login
 {
@@ -26,7 +31,6 @@ namespace RhezomFac.ViewModels.Login
             this.LoginCommand = new Command(this.LoginClicked);
             this.SignUpCommand = new Command(this.SignUpClicked);
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
-            this.SocialMediaLoginCommand = new Command(this.SocialLoggedIn);
         }
 
         #endregion
@@ -74,11 +78,6 @@ namespace RhezomFac.ViewModels.Login
         /// </summary>
         public Command ForgotPasswordCommand { get; set; }
 
-        /// <summary>
-        /// Gets or sets the command that is executed when the social media login button is clicked.
-        /// </summary>
-        public Command SocialMediaLoginCommand { get; set; }
-
         #endregion
 
         #region methods
@@ -87,18 +86,22 @@ namespace RhezomFac.ViewModels.Login
         /// Invoked when the Log In button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void LoginClicked(object obj)
+        private async void LoginClicked(object obj)
         {
             // Do something
+            Debug.WriteLine("Login clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new AccueilPage()); //while testing
         }
 
         /// <summary>
         /// Invoked when the Sign Up button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void SignUpClicked(object obj)
+        private async void SignUpClicked(object obj)
         {
             // Do something
+            Debug.WriteLine("S'enregistrer clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new SimpleSignUpPage());
         }
 
         /// <summary>
@@ -111,15 +114,9 @@ namespace RhezomFac.ViewModels.Login
             label.BackgroundColor = Color.FromHex("#70FFFFFF");
             await Task.Delay(100);
             label.BackgroundColor = Color.Transparent;
-        }
 
-        /// <summary>
-        /// Invoked when social media login button is clicked.
-        /// </summary>
-        /// <param name="obj">The Object</param>
-        private void SocialLoggedIn(object obj)
-        {
-            // Do something
+            Debug.WriteLine("Mot de passe oublié clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new SimpleForgotPasswordPage());
         }
 
         #endregion

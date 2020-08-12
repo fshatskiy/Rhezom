@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="RhezomFac.Views.DonneesEntreprise.DonneesEntreprisePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:helper="clr-namespace:RhezomFac.Helpers"
+    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.DonneesEntreprise"
+    BackgroundColor="{DynamicResource Gray-White}"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <viewModel:DonneesEntrepriseViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0">
+
+                <!--  Title view  -->
+                <Grid
+                    Padding="16,24,16,0"
+                    BackgroundColor="#ffffff"
+                    ColumnSpacing="8"
+                    RowSpacing="2">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--  Title Name  -->
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,0,0,0"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="19"
+                        HorizontalOptions="Center"
+                        LineBreakMode="TailTruncation"
+                        LineHeight="{OnPlatform Default=-1,
+                                                Android=1.25}"
+                        MaxLines="1"
+                        Text="DONNÉES DE L'ENTREPRISE"
+                        TextColor="#0A80C9" />
+                </Grid>
+
+                <BoxView Margin="0,0,0,8" Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Grid for home label and icon  -->
+                <Grid
+                    x:Name="ProfilEntrGrid"
+                    BackgroundColor="{DynamicResource Gray-White}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        helper:RTLHelper.Margin="16, 0, 8, 0"
+                        Style="{StaticResource ProfileIconLabelStyle}" />
+                        <!--Text="{StaticResource Home}"-->
+                        <!--TextColor="{DynamicResource PrimaryColor}"-->
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,20"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="17"
+                        Style="{StaticResource ProfileLabelStyle}"
+                        Text="Profil de l'entreprise"/>
+                    <!--TextColor="{DynamicResource PrimaryColor}"-->
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ProfilEntrCommand}" CommandParameter="{x:Reference ProfilEntrGrid}" />
+                    </Grid.GestureRecognizers>
+
+                </Grid>
+
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Grid for interests label and icon  -->
+                <Grid
+                    x:Name="ProduitsGrid"
+                    BackgroundColor="{DynamicResource Gray-White}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        helper:RTLHelper.Margin="16, 0, 8, 0"
+                        Style="{StaticResource ProfileIconLabelStyle}" />
+                        <!--Text="{StaticResource Interests}"-->
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,20"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="17"
+                        Style="{StaticResource ProfileLabelStyle}"
+                        Text="Produits" />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ProduitsCommand}" CommandParameter="{x:Reference ProduitsGrid}" />
+                    </Grid.GestureRecognizers>
+
+                </Grid>
+
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

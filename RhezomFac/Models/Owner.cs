@@ -54,15 +54,15 @@ namespace RhezomFac.Models
 
         #region methodes
 
-        public bool CheckInformation()
-        {
-            if (!this.Mail.Equals("") && !this.Mdp.Equals(""))
-            {
-                return true;
-            }
-            else
-                return false;
-        }
+        //public bool CheckInformation()
+        //{
+        //    if (!this.Mail.Equals("") && !this.Mdp.Equals(""))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //        return false;
+        //}
 
         //private void Btn_login_Clicked(object sender, System.EventArgs e)
         //{

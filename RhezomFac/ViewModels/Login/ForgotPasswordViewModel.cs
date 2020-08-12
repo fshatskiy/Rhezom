@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using RhezomFac.Views.Forms;
+using RhezomFac.Views.Login;
+using System.Diagnostics;
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 namespace RhezomFac.ViewModels.Login
@@ -42,18 +45,22 @@ namespace RhezomFac.ViewModels.Login
         /// Invoked when the Send button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void SendClicked(object obj)
+        private async void SendClicked(object obj)
         {
-            // Do something
+            // Do Something
+            Debug.WriteLine("Envoyer clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new SimpleLoginPage());
         }
 
         /// <summary>
         /// Invoked when the Sign Up button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void SignUpClicked(object obj)
+        private async void SignUpClicked(object obj)
         {
             // Do something
+            Debug.WriteLine("S'enregistrer clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new SimpleSignUpPage());
         }
 
         #endregion

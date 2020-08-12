@@ -4,77 +4,65 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
-namespace RhezomFac.ViewModels.Parametres
+namespace RhezomFac.ViewModels.DonneesEntreprise
 {
     /// <summary>
     /// ViewModel for burger menu expand page.
     /// </summary>
     [Preserve(AllMembers = true)]
-    public class ParametresViewModel : BaseViewModel
+    public class DonneesEntrepriseViewModel : BaseViewModel
     {
+        #region Fields
+
+        #endregion
 
         #region Constructor
 
         /// <summary>
-        /// Initializes a new instance for the <see cref="ParametresViewModel" /> class.
+        /// Initializes a new instance for the <see cref="DonneesEntrepriseViewModel" /> class.
         /// </summary>
-        public ParametresViewModel()
+        public DonneesEntrepriseViewModel()
         {
-            this.ConditionsCommand = new Command(this.ConditionsButtonClicked);
-            this.ChangeMDPCommand = new Command(this.ChangeMDPButtonClicked);
-            this.DeconnexionCommand = new Command(this.DeconnexionButtonClicked);
-        }
 
+            this.ProfilEntrCommand = new Command(this.ProfilEntrClicked);
+            this.ProduitsCommand = new Command(this.ProduitsButtonClicked);
+        }
 
         #endregion
 
         #region Command
+        /// <summary>
+        /// Gets or sets the command that is executed when the Profil de l'entreprise view is clicked.
+        /// </summary>
+        public Command ProfilEntrCommand { get; set; }
 
         /// <summary>
-        /// Gets or sets the command that is executed when the bookmark view is clicked.
+        /// Gets or sets the command that is executed when the Produits view is clicked.
         /// </summary>
-        public Command ConditionsCommand { get; set; }
-
-        /// <summary>
-        /// Gets or sets the command that is executed when the activity view is clicked.
-        /// </summary>
-        public Command ChangeMDPCommand { get; set; }
-
-        /// <summary>
-        /// Gets or sets the command that is executed when the profile view is clicked.
-        /// </summary>
-        public Command DeconnexionCommand { get; set; }
+        public Command ProduitsCommand { get; set; }
 
         #endregion
 
         #region Methods
 
         /// <summary>
-        /// Invoked when the bookmark button is clicked.
+        /// Invoked when the Profil de l'entreprise button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
-        private void ConditionsButtonClicked(object obj)
+        private void ProfilEntrClicked(object obj)
         {
             this.UpdateSelectedItemColor(obj);
         }
 
         /// <summary>
-        /// Invoked when the activity button is clicked.
+        /// Invoked when the Produits button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
-        private void ChangeMDPButtonClicked(object obj)
+        private void ProduitsButtonClicked(object obj)
         {
             this.UpdateSelectedItemColor(obj);
         }
 
-        /// <summary>
-        /// Invoked when the profile button is clicked.
-        /// </summary>
-        /// <param name="obj">The object</param>
-        private void DeconnexionButtonClicked(object obj)
-        {
-            this.UpdateSelectedItemColor(obj);
-        }
 
         /// <summary>
         /// Changes the selection color when an item is tapped.

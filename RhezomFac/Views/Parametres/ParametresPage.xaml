@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="RhezomFac.Views.Parametres.Parametres"
+    x:Class="RhezomFac.Views.Parametres.ParametresPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
@@ -46,84 +46,46 @@
 
             </StackLayout>-->
 
-
-
-
-
-
         <ScrollView>
             <StackLayout Spacing="0">
 
+                <!--  Title view  -->
+                <Grid
+                    Padding="16,24,16,0"
+                    BackgroundColor="#ffffff"
+                    ColumnSpacing="8"
+                    RowSpacing="2">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--  Title Name  -->
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,0,0,0"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="19"
+                        HorizontalOptions="Center"
+                        LineBreakMode="TailTruncation"
+                        LineHeight="{OnPlatform Default=-1,
+                                                Android=1.25}"
+                        MaxLines="1"
+                        Text="PARAMETRES"
+                        TextColor="#0A80C9" />
+                </Grid>
+
                 <BoxView Margin="0,0,0,8" Style="{StaticResource SeparatorStyle}" />
-
-                <!--  Grid for Modifier les données de l'entreprise label and icon  -->
-                <Grid
-                    x:Name="HomeGrid"
-                    BackgroundColor="{DynamicResource Gray-White}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Label
-                        Grid.Column="0"
-                        helper:RTLHelper.Margin="16, 0, 8, 0"
-                        Style="{StaticResource ProfileIconLabelStyle}" />
-                        <!--Text="{StaticResource Home}"-->
-                        <!--TextColor="{DynamicResource PrimaryColor}"-->
-
-                    <Label
-                        Grid.Column="1"
-                        Margin="0,20"
-                        FontFamily="{StaticResource Montserrat-SemiBold}"
-                        FontSize="17"
-                        Style="{StaticResource ProfileLabelStyle}"
-                        Text="Modifier les données de l'entreprise" />
-                        <!--TextColor="{DynamicResource PrimaryColor}"-->
-
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding HomeCommand}" CommandParameter="{x:Reference HomeGrid}" />
-                    </Grid.GestureRecognizers>
-
-                </Grid>
-
-                <BoxView Style="{StaticResource SeparatorStyle}" />
-
-                <!--  Grid for Modifier le logo label and icon  -->
-                <Grid
-                    x:Name="InterestsGrid"
-                    BackgroundColor="{DynamicResource Gray-White}">
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Label
-                        Grid.Column="0"
-                        helper:RTLHelper.Margin="16, 0, 8, 0"
-                        Style="{StaticResource ProfileIconLabelStyle}" />
-                        <!--Text="{StaticResource Interests}"-->
-
-                    <Label
-                        Grid.Column="1"
-                        Margin="0,20"
-                        FontFamily="{StaticResource Montserrat-SemiBold}"
-                        FontSize="17"
-                        Style="{StaticResource ProfileLabelStyle}"
-                        Text="Modifier le logo" />
-
-                    <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding InterestsCommand}" CommandParameter="{x:Reference InterestsGrid}" />
-                    </Grid.GestureRecognizers>
-
-                </Grid>
-
-                <BoxView Style="{StaticResource SeparatorStyle}" />
 
                 <!--  Grid for Conditions d'utilisation label and icon  -->
                 <Grid
-                    x:Name="BookmarkGrid"
+                    x:Name="ConditionsGrid"
                     BackgroundColor="{DynamicResource Gray-White}">
 
                     <Grid.ColumnDefinitions>
@@ -146,7 +108,7 @@
                         Text="Conditions d'utilisation" />
 
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding BookmarkCommand}" CommandParameter="{x:Reference BookmarkGrid}" />
+                        <TapGestureRecognizer Command="{Binding ConditionsCommand}" CommandParameter="{x:Reference ConditionsGrid}" />
                     </Grid.GestureRecognizers>
 
                 </Grid>
@@ -155,7 +117,7 @@
 
                 <!--  Grid for Changer mon mot de passe label and icon  -->
                 <Grid
-                    x:Name="ActivityGrid"
+                    x:Name="ChangeMDPGrid"
                     BackgroundColor="{DynamicResource Gray-White}">
 
                     <Grid.ColumnDefinitions>
@@ -178,7 +140,7 @@
                         Text="Changer mon mot de passe" />
 
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ActivityCommand}" CommandParameter="{x:Reference ActivityGrid}" />
+                        <TapGestureRecognizer Command="{Binding ChangeMDPCommand}" CommandParameter="{x:Reference ChangeMDPGrid}" />
                     </Grid.GestureRecognizers>
 
                 </Grid>
@@ -187,7 +149,7 @@
 
                 <!--  Grid for Se déconnecter label and icon  -->
                 <Grid
-                    x:Name="ProfileGrid"
+                    x:Name="DeconnexionGrid"
                     BackgroundColor="{DynamicResource Gray-White}">
 
                     <Grid.ColumnDefinitions>
@@ -210,7 +172,7 @@
                         Text="Se déconnecter" />
 
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ProfileCommand}" CommandParameter="{x:Reference ProfileGrid}" />
+                        <TapGestureRecognizer Command="{Binding DeconnexionCommand}" CommandParameter="{x:Reference DeconnexionGrid}" />
                     </Grid.GestureRecognizers>
 
                 </Grid>

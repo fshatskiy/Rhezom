@@ -7,6 +7,7 @@ using System.Diagnostics;
 using RhezomFac.Views.Login;
 using RhezomFac.Views.Accueil;
 using RhezomFac.Views.Parametres;
+using RhezomFac.Views.DonneesEntreprise;
 
 namespace RhezomFac
 {
@@ -23,7 +24,7 @@ namespace RhezomFac
 
             //Page racine de l'application
             //MainPage = new MainPage();
-            MainPage = new Parametres();
+            MainPage = new NavigationPage(new SimpleLoginPage());
         }
 
         /// <summary>

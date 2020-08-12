@@ -8,12 +8,12 @@ namespace RhezomFac.Views.Parametres
     /// </summary>
     [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Parametres
+    public partial class ParametresPage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Parametres" /> class.
+        /// Initializes a new instance of the <see cref="ParametresPage" /> class.
         /// </summary>
-        public Parametres()
+        public ParametresPage()
         {
             InitializeComponent();
         }

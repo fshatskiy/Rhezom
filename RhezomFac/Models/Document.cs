@@ -180,17 +180,46 @@ namespace RhezomFac.Models
             set { _infoAdd = value; }
         }
 
+        private DateTime _dateEmission;
+
+        public DateTime DateEmission
+        {
+            get { return _dateEmission; }
+            set { _dateEmission = value; }
+        }
+
         #endregion
 
         #region constructeur(s)
         //constr par def
         public Document() { }
-        public Document(string logo, DateTime date, string numTVAClient, string numTVAEntr, string adrClient, string adrEntr, string pays, string bCE, string iBAN, string bIC, string numTelFixe, string numMobile, string numFax, string mailEntr, string mailClient, string lienWeb, List<string> listeProd, int qtiteProd, float totalHT, float totalTVA, string infoAdd)
+        public Document(string logo,
+                        DateTime date,
+                        string numTVAClient,
+                        string numTVAEntr,
+                        string adrClient,
+                        string adrEntr,
+                        string pays,
+                        string bCE,
+                        string iBAN,
+                        string bIC,
+                        string numTelFixe,
+                        string numMobile,
+                        string numFax,
+                        string mailEntr,
+                        string mailClient,
+                        string lienWeb,
+                        List<string> listeProd,
+                        int qtiteProd,
+                        float totalHT,
+                        float totalTVA,
+                        string infoAdd,
+                        DateTime dateEmission)
         {
             this._logo = logo;
             this._date = date;
             this._numTVAClient = numTVAClient;
-            this._numTVAEntr = numTVAEntr;
+            this._numTVAEntr = numTVAEntr; //client final
             this._adrClient = adrClient;
             this._adrEntr = adrEntr;
             this._pays = pays;
@@ -201,13 +230,14 @@ namespace RhezomFac.Models
             this._numMobile = numMobile;
             this._numFax = numFax;
             this._mailEntr = mailEntr;
-            this._mailClient = mailClient;
+            this._mailClient = mailClient; //client final
             this._lienWeb = lienWeb;
             this._listeProd = listeProd;
             this._qtiteProd = qtiteProd;
             this._totalHT = totalHT;
             this._totalTVA = totalTVA;
             this._infoAdd = infoAdd;
+            this._dateEmission = dateEmission;
         }
         #endregion
 

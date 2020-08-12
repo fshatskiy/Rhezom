@@ -1,4 +1,8 @@
-﻿using System.ComponentModel;
+﻿using RhezomFac.Views.AboutUs;
+using RhezomFac.Views.DonneesEntreprise;
+using RhezomFac.Views.Parametres;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -32,6 +36,7 @@ namespace RhezomFac.ViewModels.Accueil
             this.BrouillonsCommand = new Command(this.BrouillonsButtonClicked);
             this.ParamCommand = new Command(this.ParamButtonClicked);
             this.EntrDataCommand = new Command(this.EntrDataButtonClicked);
+            this.AboutUsCommand = new Command(this.AboutUsButtonClicked);
         }
 
         #endregion
@@ -67,12 +72,17 @@ namespace RhezomFac.ViewModels.Accueil
         /// </summary>
         public Command EntrDataCommand { get; set; }
 
+        /// <summary>
+        /// Gets or sets the command that is executed when the AboutUs view is clicked.
+        /// </summary>
+        public Command AboutUsCommand { get; set; }
+
         #endregion
 
         #region Methods
 
         /// <summary>
-        /// Invoked when the home button is clicked.
+        /// Invoked when the Devis button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
         private void DevisButtonClicked(object obj)
@@ -81,7 +91,7 @@ namespace RhezomFac.ViewModels.Accueil
         }
 
         /// <summary>
-        /// Invoked when the interests button is clicked.
+        /// Invoked when the Factures button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
         private void FacturesButtonClicked(object obj)
@@ -90,7 +100,7 @@ namespace RhezomFac.ViewModels.Accueil
         }
 
         /// <summary>
-        /// Invoked when the bookmark button is clicked.
+        /// Invoked when the Brouillons button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
         private void BrouillonsButtonClicked(object obj)
@@ -99,21 +109,36 @@ namespace RhezomFac.ViewModels.Accueil
         }
 
         /// <summary>
-        /// Invoked when the activity button is clicked.
+        /// Invoked when the Paramètres button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
-        private void ParamButtonClicked(object obj)
+        private async void ParamButtonClicked(object obj)
         {
             this.UpdateSelectedItemColor(obj);
+            Debug.WriteLine("Paramètres clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new ParametresPage());
         }
 
         /// <summary>
-        /// Invoked when the profile button is clicked.
+        /// Invoked when the Données de l'entreprise button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
-        private void EntrDataButtonClicked(object obj)
+        private async void EntrDataButtonClicked(object obj)
         {
             this.UpdateSelectedItemColor(obj);
+            Debug.WriteLine("Données de l'entreprise clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new DonneesEntreprisePage());
+        }
+
+        /// <summary>
+        /// Invoked when the A propos de nous button is clicked.
+        /// </summary>
+        /// <param name="obj">The object</param>
+        private async void AboutUsButtonClicked(object obj)
+        {
+            this.UpdateSelectedItemColor(obj);
+            Debug.WriteLine("A propos de nous clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new AboutUsSimplePage());
         }
 
         /// <summary>

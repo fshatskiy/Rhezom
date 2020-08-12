@@ -55,7 +55,11 @@ namespace RhezomFac.Models
         #endregion
 
         #region constructeur
-        public Produit(string nom, string description, int qtiteRest, float prixHT, float tauxTVA)
+        public Produit(string nom,
+                       string description,
+                       int qtiteRest,
+                       float prixHT,
+                       float tauxTVA)
         {
             this._nom = nom;
             this._description = description;
