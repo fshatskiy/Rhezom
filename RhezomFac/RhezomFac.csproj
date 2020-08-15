@@ -4,6 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
 	  <LangVersion>8.0</LangVersion>
+	  <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -53,11 +54,23 @@
     <Compile Update="Views\Accueil\AccueilPage.xaml.cs">
       <DependentUpon>AccueilPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\BrouillonsNav\BrouillonsListe.xaml.cs">
+      <DependentUpon>BrouillonsListe.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DevisNav\DevisListe.xaml.cs">
+      <DependentUpon>DevisListe.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\DonneesEntreprise\DonneesEntreprisePage.xaml.cs">
       <DependentUpon>DonneesEntreprisePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\FacturesNav\FacturesListe.xaml.cs">
+      <DependentUpon>FacturesListe.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Parametres\ParametresPage.xaml.cs">
       <DependentUpon>ParametresPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Templates\NavigationListTemplate.xaml.cs">
+      <DependentUpon>NavigationListTemplate.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -77,19 +90,28 @@
     <EmbeddedResource Update="Views\Accueil\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\BrouillonsNav\BrouillonsListe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BrouillonsNav\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DevisNav\DevisListe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DevisNav\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\DonneesEntreprise\DonneesEntreprisePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DonneesEntreprise\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Forms\SimpleEmailEntry.xaml">
+    <EmbeddedResource Update="Views\FacturesNav\FacturesListe.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Forms\SimpleSignUpPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Forms\Styles.xaml">
+    <EmbeddedResource Update="Views\FacturesNav\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Login\SimpleEmailEntry.xaml">
@@ -111,6 +133,27 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Parametres\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignUp\SimpleEmailEntry.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignUp\SimpleSignUpPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignUp\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Templates\NavigationListTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Templates\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\VidePage\NoItemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\VidePage\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

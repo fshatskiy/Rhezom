@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
-    x:Class="RhezomFac.Views.Forms.SimpleSignUpPage"
+    x:Class="RhezomFac.Views.SignUp.SimpleSignUpPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
@@ -8,8 +8,8 @@
     xmlns:control="clr-namespace:RhezomFac.Controls"
     xmlns:converter="clr-namespace:RhezomFac.Converters"
     xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
-    xmlns:local="clr-namespace:RhezomFac.Views.Forms"
-    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.Forms"
+    xmlns:local="clr-namespace:RhezomFac.Views.SignUp"
+    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.SignUp"
     Title="Sign Up"
     BackgroundColor="{DynamicResource Gray-200}"
     NavigationPage.HasNavigationBar="False">
@@ -58,7 +58,7 @@
                         FontSize="20"
                         HorizontalOptions="Center"
                         Style="{StaticResource LabelStyle}"
-                        Text="Création de compte"
+                        Text="Créer un compte"
                         TextColor="{DynamicResource Gray-900}" />
 
                     <!--  Label to display the description of this page  -->
@@ -68,7 +68,7 @@
                         FontFamily="{StaticResource Montserrat-Medium}"
                         HorizontalTextAlignment="Center"
                         Style="{StaticResource LabelStyle}"
-                        Text="Créez un compte pour pouvoir accéder à l'application"
+                        Text="Veuillez remplir les champs ci-dessous pour créer un compte"
                         TextColor="{DynamicResource Gray-800}" />
 
                     <!--  Entry to get username from user  -->
@@ -124,7 +124,7 @@
                         CornerRadius="20"
                         FontFamily="{StaticResource Montserrat-SemiBold}"
                         Style="{StaticResource SfButtonStyle}"
-                        Text="Enregistrer" />
+                        Text="Créer un compte" />
                 </StackLayout>
 
                 <StackLayout
@@ -133,19 +133,19 @@
                     Spacing="1"
                     VerticalOptions="End">
 
-                    <!--<StackLayout.Padding>
+                    <StackLayout.Padding>
                         <OnIdiom
-                            x:DataType="Thickness"
+                            x:TypeArguments="Thickness"
                             Default="0, 48, 0, 0"
                             Phone="0" />
-                    </StackLayout.Padding>-->
+                    </StackLayout.Padding>
 
                     <Label
                         FontFamily="{StaticResource Montserrat-Medium}"
                         HorizontalOptions="CenterAndExpand"
                         HorizontalTextAlignment="Center"
                         Style="{StaticResource LabelStyle}"
-                        Text="Vous possédez déjà un compte ?"
+                        Text="Vous avez déjà un compte ?"
                         TextColor="{DynamicResource Gray-800}"
                         VerticalTextAlignment="Center" />
 

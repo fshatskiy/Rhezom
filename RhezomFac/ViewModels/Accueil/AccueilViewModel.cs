@@ -1,5 +1,8 @@
 ﻿using RhezomFac.Views.AboutUs;
+using RhezomFac.Views.BrouillonsNav;
+using RhezomFac.Views.DevisNav;
 using RhezomFac.Views.DonneesEntreprise;
+using RhezomFac.Views.FacturesNav;
 using RhezomFac.Views.Parametres;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -85,27 +88,33 @@ namespace RhezomFac.ViewModels.Accueil
         /// Invoked when the Devis button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
-        private void DevisButtonClicked(object obj)
+        private async void DevisButtonClicked(object obj)
         {
             this.UpdateSelectedItemColor(obj);
+            Debug.WriteLine("Devis clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new DevisListe());
         }
 
         /// <summary>
         /// Invoked when the Factures button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
-        private void FacturesButtonClicked(object obj)
+        private async void FacturesButtonClicked(object obj)
         {
             this.UpdateSelectedItemColor(obj);
+            Debug.WriteLine("Factures clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new FacturesListe());
         }
 
         /// <summary>
         /// Invoked when the Brouillons button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
-        private void BrouillonsButtonClicked(object obj)
+        private async void BrouillonsButtonClicked(object obj)
         {
             this.UpdateSelectedItemColor(obj);
+            Debug.WriteLine("Brouillons clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new BrouillonsListe());
         }
 
         /// <summary>

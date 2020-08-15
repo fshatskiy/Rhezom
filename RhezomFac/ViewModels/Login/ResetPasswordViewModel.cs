@@ -1,4 +1,4 @@
-﻿using RhezomFac.Views.Forms;
+﻿using RhezomFac.Views.SignUp;
 using RhezomFac.Views.Login;
 using System.Diagnostics;
 using Xamarin.Forms;
@@ -101,7 +101,7 @@ namespace RhezomFac.ViewModels.Login
         /// Invoked when the Submit button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private async void SubmitClicked(object obj)
+        private void  SubmitClicked(object obj)
         {
             // Do something
             Debug.WriteLine("Envoyer clicked");

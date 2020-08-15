@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms.Internals;
 
-namespace RhezomFac.ViewModels.Forms
+namespace RhezomFac.ViewModels.SignUp
 {
     /// <summary>
     /// ViewModel for login page.

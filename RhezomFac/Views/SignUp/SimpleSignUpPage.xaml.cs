@@ -1,19 +1,19 @@
 ﻿using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
-namespace RhezomFac.Views.Forms
+namespace RhezomFac.Views.SignUp
 {
     /// <summary>
-    /// Class helps to reduce repetitive markup, and allows an apps appearance to be more easily changed.
+    /// Page to sign in with user details.
     /// </summary>
     [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Styles
+    public partial class SimpleSignUpPage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Styles" /> class.
+        /// Initializes a new instance of the <see cref="SimpleSignUpPage" /> class.
         /// </summary>
-        public Styles()
+        public SimpleSignUpPage()
         {
             InitializeComponent();
         }

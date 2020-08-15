@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentView
-    x:Class="RhezomFac.Views.Forms.SimpleEmailEntry"
+    x:Class="RhezomFac.Views.SignUp.SimpleEmailEntry"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
@@ -57,7 +57,7 @@
                 Margin="15,-5,0,0"
                 FontSize="12"
                 IsVisible="{Binding Path=IsFocused, Source={x:Reference EmailEntry}, Converter={StaticResource StringToBooleanConverter}, ConverterParameter={x:Reference EmailEntry}}"
-                Text="Adresse mail invalide"
+                Text="Adresse mail non valide."
                 TextColor="{DynamicResource Red}"
                 VerticalOptions="FillAndExpand" />
 

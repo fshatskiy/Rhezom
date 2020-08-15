@@ -1,4 +1,4 @@
-﻿using RhezomFac.Views.Forms;
+﻿using RhezomFac.Views.SignUp;
 using RhezomFac.Views.Login;
 using System.Diagnostics;
 using Xamarin.Forms;

@@ -1,19 +1,19 @@
 ﻿using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
-namespace RhezomFac.Views.Forms
+namespace RhezomFac.Views.SignUp
 {
     /// <summary>
-    /// View used to show the email entry with validation status.
+    /// Class helps to reduce repetitive markup, and allows an apps appearance to be more easily changed.
     /// </summary>
     [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SimpleEmailEntry
+    public partial class Styles
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SimpleEmailEntry" /> class.
+        /// Initializes a new instance of the <see cref="Styles" /> class.
         /// </summary>
-        public SimpleEmailEntry()
+        public Styles()
         {
             InitializeComponent();
         }
