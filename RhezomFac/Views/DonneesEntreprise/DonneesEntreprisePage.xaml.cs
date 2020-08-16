@@ -17,5 +17,11 @@ namespace RhezomFac.Views.DonneesEntreprise
         {
             InitializeComponent();
         }
+
+        private void BackButton_Clicked(object sender, System.EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("back button clicked clicked");
+            App.Current.MainPage.Navigation.PopAsync();
+        }
     }
 }

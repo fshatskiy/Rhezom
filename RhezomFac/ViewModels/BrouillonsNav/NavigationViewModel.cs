@@ -24,16 +24,13 @@ namespace RhezomFac.ViewModels.BrouillonsNav
 
         #region Constructor
 
-        //public NavigationViewModel()
-        //{
-        //    this.BackButtonCommand = new Command(this.BackButtonClicked);
-        //}
+        public NavigationViewModel()
+        {
+        }
 
         #endregion
 
         #region Properties
-
-        public Command BackButtonCommand { get; set; }
 
         /// <summary>
         /// Gets the command that will be executed when an item is selected.
@@ -61,18 +58,13 @@ namespace RhezomFac.ViewModels.BrouillonsNav
         /// Invoked when an item is selected from the navigation list.
         /// </summary>
         /// <param name="selectedItem">Selected item from the list view.</param>
-        private void NavigateToNextPage(object selectedItem)
+        private async void NavigateToNextPage(object selectedItem)
         {
             // A l'ouverture d'un brouillon
-            System.Diagnostics.Debug.WriteLine("Devis clicked");
+            System.Diagnostics.Debug.WriteLine("Ouverture d'un brouillon clicked");
+            await App.Current.MainPage.Navigation.PopAsync(); //retourne en arrière
         }
 
-        // test
-        //private async void BackButtonClicked(object sender, EventArgs e)
-        //{
-        //    System.Diagnostics.Debug.WriteLine("back button clicked clicked");
-        //     await App.Current.MainPage.Navigation.PopAsync();
-        //}
 
         #endregion
     }

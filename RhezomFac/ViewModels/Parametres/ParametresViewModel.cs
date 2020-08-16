@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using RhezomFac.Views.Login;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -74,6 +76,9 @@ namespace RhezomFac.ViewModels.Parametres
         private void DeconnexionButtonClicked(object obj)
         {
             this.UpdateSelectedItemColor(obj);
+            Debug.WriteLine("Deconnexion clicked");
+            //await App.Current.MainPage.Navigation.PushAsync(new SimpleLoginPage());
+
         }
 
         /// <summary>

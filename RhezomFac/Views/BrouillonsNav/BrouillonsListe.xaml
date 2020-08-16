@@ -8,7 +8,8 @@
     xmlns:template="clr-namespace:RhezomFac.Views.Templates"
     xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.BrouillonsNav" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     BackgroundColor="{DynamicResource Gray-White}"
-    NavigationPage.HasNavigationBar="False">
+    NavigationPage.HasNavigationBar="True"
+        Title="BROUILLONS">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -26,6 +27,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
+
             <!--  Title View  -->
             <!--<Grid>
                 <Grid.ColumnDefinitions>
@@ -34,19 +36,18 @@
                 </Grid.ColumnDefinitions>
                         <controls:TitleView Title="BROUILLONS" Grid.Column="1" Grid.Row="0" />
 
-                    <buttons:SfButton  x:Name="backButton"  Command="{Binding BackButtonCommand}" Grid.Column="0"
-                                       CommandParameter="{x:Reference backButton}" CornerRadius="4"
-                                       Style="{StaticResource IconButtonStyle}" Text="{StaticResource Back}"/>
-
+                <buttons:SfButton  x:Name="backButton"  Clicked="BackButton_Clicked" Grid.Column="0"
+                                   CornerRadius="4"
+                                   CommandParameter="{x:Reference backButton}"
+                                   Style="{StaticResource IconButtonStyle}" Text="{StaticResource Back}"/>
             </Grid>-->
             <StackLayout Grid.Row="1" Spacing="0">
-
                 <listView:SfListView
                     Padding="15,0,10,0"
                     AutoFitMode="Height"
                     IsScrollBarVisible="false"
                     ItemSpacing="0,0,0,12"
-                    ItemsSource="{Binding NavigationList}" 
+                    ItemsSource="{Binding NavigationList}"
                     SelectionBackgroundColor="Transparent"
                     TapCommand="{Binding ItemTappedCommand}"
                     VerticalOptions="FillAndExpand">

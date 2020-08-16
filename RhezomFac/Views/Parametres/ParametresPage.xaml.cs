@@ -17,5 +17,10 @@ namespace RhezomFac.Views.Parametres
         {
             InitializeComponent();
         }
+
+        private void ClickToShowPopup_Clicked(object sender, System.EventArgs e)
+        {
+            //popupLayout.Show();
+        }
     }
 }

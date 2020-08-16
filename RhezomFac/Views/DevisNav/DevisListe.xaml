@@ -6,9 +6,10 @@
     xmlns:controls="clr-namespace:RhezomFac.Controls"
     xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
     xmlns:template="clr-namespace:RhezomFac.Views.Templates"
-    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.DevisNav"
+    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.DevisNav" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     BackgroundColor="{DynamicResource Gray-White}"
-    NavigationPage.HasNavigationBar="False">
+    NavigationPage.HasNavigationBar="True"
+        Title="DEVIS">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -26,8 +27,19 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <!--  Title View  -->
-            <controls:TitleView Title="DEVIS" Grid.Row="0" />
+            <!--  Title View  --><!--
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <controls:TitleView Title="DEVIS" Grid.Column="1" Grid.Row="0" />
+
+                <buttons:SfButton  x:Name="backButton"  Clicked="BackButton_Clicked" Grid.Column="0"
+                                   CornerRadius="4"
+                                   CommandParameter="{x:Reference backButton}"
+                                   Style="{StaticResource IconButtonStyle}" Text="{StaticResource Back}"/>
+            </Grid>-->
 
             <StackLayout Grid.Row="1" Spacing="0">
 
@@ -35,7 +47,7 @@
                     Padding="15,0,10,0"
                     AutoFitMode="Height"
                     IsScrollBarVisible="false"
-                    ItemSpacing="0,5,0,0"
+                    ItemSpacing="0,0,0,5"
                     ItemsSource="{Binding NavigationList}"
                     SelectionBackgroundColor="Transparent"
                     TapCommand="{Binding ItemTappedCommand}"

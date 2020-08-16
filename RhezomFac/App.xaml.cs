@@ -25,6 +25,7 @@ namespace RhezomFac
             //Page racine de l'application
             //MainPage = new MainPage();
             MainPage = new NavigationPage(new SimpleLoginPage());
+            //NavigationPage.SetHasBackButton(MainPage, true);//tester sans
         }
 
         /// <summary>

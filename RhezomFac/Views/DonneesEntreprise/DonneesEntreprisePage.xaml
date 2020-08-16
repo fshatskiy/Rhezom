@@ -5,9 +5,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
     xmlns:helper="clr-namespace:RhezomFac.Helpers"
-    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.DonneesEntreprise"
+    xmlns:controls="clr-namespace:RhezomFac.Controls"
+    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.DonneesEntreprise" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     BackgroundColor="{DynamicResource Gray-White}"
-    NavigationPage.HasNavigationBar="False">
+    NavigationPage.HasNavigationBar="True"
+        Title="DONNÉS DE L'ENTREPRISE">
+
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -25,7 +28,7 @@
         <ScrollView>
             <StackLayout Spacing="0">
 
-                <!--  Title view  -->
+                <!--  Title view  --><!--
                 <Grid
                     Padding="16,24,16,0"
                     BackgroundColor="#ffffff"
@@ -39,10 +42,14 @@
 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
+                    <buttons:SfButton  x:Name="backButton"  Clicked="BackButton_Clicked" Grid.Column="0"
+                                   CornerRadius="4"
+                                   CommandParameter="{x:Reference backButton}"
+                                   Style="{StaticResource IconButtonStyle}" Text="{StaticResource Back}"/>
 
-                    <!--  Title Name  -->
+                    --><!--  Title Name  --><!--
                     <Label
                         Grid.Column="1"
                         Margin="0,0,0,0"
@@ -55,7 +62,21 @@
                         MaxLines="1"
                         Text="DONNÉES DE L'ENTREPRISE"
                         TextColor="#0A80C9" />
-                </Grid>
+                </Grid>-->
+
+
+                <!--<Grid>
+                    --><!--<Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <controls:TitleView Title="DONNÉS DE L'ENTREPRISE" Grid.Column="1" Grid.Row="0" />--><!--
+
+                    <buttons:SfButton  x:Name="backButton"  Clicked="BackButton_Clicked" Grid.Column="0"
+                                   CornerRadius="4"
+                                   CommandParameter="{x:Reference backButton}"
+                                   Style="{StaticResource IconButtonStyle}" Text="{StaticResource Back}"/>
+                </Grid>-->
 
                 <BoxView Margin="0,0,0,8" Style="{StaticResource SeparatorStyle}" />
 

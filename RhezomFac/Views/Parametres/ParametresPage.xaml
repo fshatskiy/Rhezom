@@ -6,8 +6,10 @@
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
     xmlns:helper="clr-namespace:RhezomFac.Helpers"
     xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.Parametres" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
     BackgroundColor="{DynamicResource Gray-White}"
-    NavigationPage.HasNavigationBar="False">
+    NavigationPage.HasNavigationBar="True"
+        Title="PARAMÈTRES">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -22,6 +24,7 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
+
 
 
 
@@ -50,6 +53,7 @@
             <StackLayout Spacing="0">
 
                 <!--  Title view  -->
+                <!--
                 <Grid
                     Padding="16,24,16,0"
                     BackgroundColor="#ffffff"
@@ -67,7 +71,9 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <!--  Title Name  -->
+                    -->
+                <!--  Title Name  -->
+                <!--
                     <Label
                         Grid.Column="1"
                         Margin="0,0,0,0"
@@ -80,7 +86,7 @@
                         MaxLines="1"
                         Text="PARAMETRES"
                         TextColor="#0A80C9" />
-                </Grid>
+                </Grid>-->
 
                 <BoxView Margin="0,0,0,8" Style="{StaticResource SeparatorStyle}" />
 
@@ -98,7 +104,7 @@
                         Grid.Column="0"
                         helper:RTLHelper.Margin="16, 0, 8, 0"
                         Style="{StaticResource ProfileIconLabelStyle}" />
-                        <!--Text="{StaticResource ClearBookmark}"-->
+                    <!--Text="{StaticResource ClearBookmark}"-->
 
                     <Label
                         Grid.Column="1"
@@ -130,7 +136,7 @@
                         Grid.Column="0"
                         helper:RTLHelper.Margin="16, 0, 8, 0"
                         Style="{StaticResource ProfileIconLabelStyle}" />
-                        <!--Text="{StaticResource Activity}"-->
+                    <!--Text="{StaticResource Activity}"-->
 
                     <Label
                         Grid.Column="1"
@@ -162,7 +168,7 @@
                         Grid.Column="0"
                         helper:RTLHelper.Margin="16, 0, 8, 0"
                         Style="{StaticResource ProfileIconLabelStyle}" />
-                        <!--Text="{StaticResource Profile}"-->
+                    <!--Text="{StaticResource Profile}"-->
 
                     <Label
                         Grid.Column="1"
@@ -175,6 +181,17 @@
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding DeconnexionCommand}" CommandParameter="{x:Reference DeconnexionGrid}" />
                     </Grid.GestureRecognizers>
+
+                    <!--<sfPopup:SfPopupLayout x:Name="popupLayout">
+                        <sfPopup:SfPopupLayout.PopupView>
+                            <sfPopup:PopupView AppearanceMode="TwoButton" />
+                        </sfPopup:SfPopupLayout.PopupView>
+                        <sfPopup:SfPopupLayout.Content>
+                            <StackLayout x:Name="layout">
+                                <Button x:Name="clickToShowPopup" Text="ClickToShowPopup" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Clicked="ClickToShowPopup_Clicked" />
+                            </StackLayout>
+                        </sfPopup:SfPopupLayout.Content>
+                    </sfPopup:SfPopupLayout>-->
 
                 </Grid>
 
