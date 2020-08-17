@@ -58,11 +58,10 @@ namespace RhezomFac.ViewModels.BrouillonsNav
         /// Invoked when an item is selected from the navigation list.
         /// </summary>
         /// <param name="selectedItem">Selected item from the list view.</param>
-        private async void NavigateToNextPage(object selectedItem)
+        private void NavigateToNextPage(object selectedItem)
         {
             // A l'ouverture d'un brouillon
             System.Diagnostics.Debug.WriteLine("Ouverture d'un brouillon clicked");
-            await App.Current.MainPage.Navigation.PopAsync(); //retourne en arrière
         }
 
 

@@ -179,19 +179,8 @@
                         Text="Se déconnecter" />
 
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding DeconnexionCommand}" CommandParameter="{x:Reference DeconnexionGrid}" />
+                        <TapGestureRecognizer Command="{Binding DeconnexionCommand}" Tapped="TapGestureRecognizer_Tapped"  CommandParameter="{x:Reference DeconnexionGrid}" />
                     </Grid.GestureRecognizers>
-
-                    <!--<sfPopup:SfPopupLayout x:Name="popupLayout">
-                        <sfPopup:SfPopupLayout.PopupView>
-                            <sfPopup:PopupView AppearanceMode="TwoButton" />
-                        </sfPopup:SfPopupLayout.PopupView>
-                        <sfPopup:SfPopupLayout.Content>
-                            <StackLayout x:Name="layout">
-                                <Button x:Name="clickToShowPopup" Text="ClickToShowPopup" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Clicked="ClickToShowPopup_Clicked" />
-                            </StackLayout>
-                        </sfPopup:SfPopupLayout.Content>
-                    </sfPopup:SfPopupLayout>-->
 
                 </Grid>
 

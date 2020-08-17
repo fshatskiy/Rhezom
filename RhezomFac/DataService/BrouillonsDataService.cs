@@ -1,14 +1,14 @@
 ﻿using System.Reflection;
 using System.Runtime.Serialization.Json;
-using RhezomFac.ViewModels.DevisNav;
+using RhezomFac.ViewModels.BrouillonsNav;
 
 namespace RhezomFac.DataService
 {
-    public class NavigationDataService
+    public class BrouillonsDataService
     {
         #region fields
 
-        private static NavigationDataService instance;
+        private static BrouillonsDataService instance;
 
         private NavigationViewModel navigationViewModel;
 
@@ -17,10 +17,10 @@ namespace RhezomFac.DataService
         #region Properties
 
         /// <summary>
-        /// Gets an instance of the <see cref="NavigationDataService"/>.
+        /// Gets an instance of the <see cref="BrouillonsDataService"/>.
         /// </summary>
         //public static NavigationDataService Instance => instance ?? (instance = new NavigationDataService());
-        public static NavigationDataService Instance => instance ??= new NavigationDataService();
+        public static BrouillonsDataService Instance => instance ??= new BrouillonsDataService();
 
         /// <summary>
         /// Gets or sets the value of navigation page view model.

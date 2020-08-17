@@ -60,11 +60,10 @@ namespace RhezomFac.ViewModels.DevisNav
         /// Invoked when an item is selected from the navigation list.
         /// </summary>
         /// <param name="selectedItem">Selected item from the list view.</param>
-        private async void NavigateToNextPage(object selectedItem)
+        private void NavigateToNextPage(object selectedItem)
         {
             // Do something
             Debug.WriteLine("Carte clicked");
-            await App.Current.MainPage.Navigation.PushAsync(new AccueilPage());
         }
 
         #endregion

@@ -77,6 +77,7 @@ namespace RhezomFac.ViewModels.Parametres
         {
             this.UpdateSelectedItemColor(obj);
             Debug.WriteLine("Deconnexion clicked");
+            //bool rep = await DisplayAlert("Titre", "Question", "Oui", "Non");
             //await App.Current.MainPage.Navigation.PushAsync(new SimpleLoginPage());
 
         }

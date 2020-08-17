@@ -1,4 +1,8 @@
-﻿using Xamarin.Forms.Internals;
+﻿using RhezomFac.Views.Login;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace RhezomFac.Views.Accueil
@@ -10,12 +14,31 @@ namespace RhezomFac.Views.Accueil
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AccueilPage
     {
+
         /// <summary>
         /// Initializes a new instance of the <see cref="AccueilPage" /> class.
         /// </summary>
         public AccueilPage()
         {
             InitializeComponent();
+        }
+
+
+        //}        protected async override bool OnBackButtonPressed()
+        //    {
+        //        bool answer = await DisplayAlert("Déconnexion", "Voulez-vous vraiment vous déconnecter ?", "Oui", "Non");
+        //        System.Diagnostics.Debug.WriteLine("Answer: " + answer);
+        //        if (answer)
+        //            await App.Current.MainPage.Navigation.PushAsync(new SimpleLoginPage());
+        //    }
+        protected override bool OnBackButtonPressed()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                var exit = await this.DisplayAlert("Confirm Exit", "Do you really want to exit the application?", "Yes", "No").ConfigureAwait(false);
+                    System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
+            });
+            return true;
         }
     }
 }

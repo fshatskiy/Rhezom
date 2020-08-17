@@ -11,7 +11,7 @@ namespace RhezomFac.Views.DevisNav
         public DevisListe()
         {
             InitializeComponent();
-            this.BindingContext = NavigationDataService.Instance.NavigationViewModel;
+            this.BindingContext = DevisDataService.Instance.NavigationViewModel;
         }
 
         private void BackButton_Clicked(object sender, System.EventArgs e)
