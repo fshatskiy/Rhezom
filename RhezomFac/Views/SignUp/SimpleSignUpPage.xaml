@@ -58,7 +58,7 @@
                         FontSize="20"
                         HorizontalOptions="Center"
                         Style="{StaticResource LabelStyle}"
-                        Text="Créer un compte"
+                        Text="Page d'inscription"
                         TextColor="{DynamicResource Gray-900}" />
 
                     <!--  Label to display the description of this page  -->
@@ -71,17 +71,34 @@
                         Text="Veuillez remplir les champs ci-dessous pour créer un compte"
                         TextColor="{DynamicResource Gray-800}" />
 
-                    <!--  Entry to get username from user  -->
+
+
+
+                    <!--  Entry to get Numéro de la TVA de l'entreprise from user  A CHANGER LES PARAMETRES -->
                     <border:SfBorder
                         BackgroundColor="{DynamicResource Gray-White}"
-                        BorderColor="{Binding Source={x:Reference NameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        BorderColor="{Binding Source={x:Reference TVAEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
                         Style="{StaticResource SfBorderStyle}">
                         <control:BorderlessEntry
-                            x:Name="NameEntry"
-                            Placeholder="Nom"
+                            x:Name="TVAEntry"
+                            Placeholder="Numéro TVA de l'entreprise"
                             PlaceholderColor="{DynamicResource Gray-700}"
                             Style="{StaticResource EntryStyle}"
-                            Text="{Binding Name}"
+                            Text="{Binding NumTVA}"
+                            TextColor="{DynamicResource Gray-900}" />
+                    </border:SfBorder>
+
+                    <!--  Entry to get PSEUDO from user A CHANGER LES PARAMETRES -->
+                    <border:SfBorder
+                        BackgroundColor="{DynamicResource Gray-White}"
+                        BorderColor="{Binding Source={x:Reference PseudoEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="PseudoEntry"
+                            Placeholder="Pseudo"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Pseudo}"
                             TextColor="{DynamicResource Gray-900}" />
                     </border:SfBorder>
 
@@ -115,6 +132,76 @@
                             PlaceholderColor="{DynamicResource Gray-700}"
                             Style="{StaticResource EntryStyle}"
                             Text="{Binding ConfirmPassword}"
+                            TextColor="{DynamicResource Gray-900}" />
+                    </border:SfBorder>
+
+                    <!--  Entry to get Nom commercial de l'entreprise from user  A CHANGER LES PARAMETRES -->
+                    <border:SfBorder
+                        BackgroundColor="{DynamicResource Gray-White}"
+                        BorderColor="{Binding Source={x:Reference NomCommercialEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="NomCommercialEntry"
+                            Placeholder="Nom commercial de l'entreprise"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding NomCommercial}"
+                            TextColor="{DynamicResource Gray-900}" />
+                    </border:SfBorder>
+
+                    <!--  Entry to get ADRESSE from user  A CHANGER LES PARAMETRES -->
+                    <border:SfBorder
+                        BackgroundColor="{DynamicResource Gray-White}"
+                        BorderColor="{Binding Source={x:Reference AdresseEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="AdresseEntry"
+                            Placeholder="Adresse"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Adresse}"
+                            TextColor="{DynamicResource Gray-900}" />
+                    </border:SfBorder>
+
+                    <!--  Entry to get PAYS from user  A CHANGER LES PARAMETRES -->
+                    <border:SfBorder
+                        BackgroundColor="{DynamicResource Gray-White}"
+                        BorderColor="{Binding Source={x:Reference PaysEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="PaysEntry"
+                            Placeholder="Pays"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Pays}"
+                            TextColor="{DynamicResource Gray-900}" />
+                    </border:SfBorder>
+
+                    <!--  Entry to get NUMERO DE TEL from user  A CHANGER LES PARAMETRES -->
+                    <border:SfBorder
+                        BackgroundColor="{DynamicResource Gray-White}"
+                        BorderColor="{Binding Source={x:Reference TelEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="TelEntry"
+                            Placeholder="Numéro de téléphone"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding Tel}"
+                            TextColor="{DynamicResource Gray-900}" />
+                    </border:SfBorder>
+
+                    <!--  Entry to get PERSONNE DE CONTACT from user  A CHANGER LES PARAMETRES -->
+                    <border:SfBorder
+                        BackgroundColor="{DynamicResource Gray-White}"
+                        BorderColor="{Binding Source={x:Reference PersContactEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
+                        Style="{StaticResource SfBorderStyle}">
+                        <control:BorderlessEntry
+                            x:Name="PersContactEntry"
+                            Placeholder="Numéro de contact"
+                            PlaceholderColor="{DynamicResource Gray-700}"
+                            Style="{StaticResource EntryStyle}"
+                            Text="{Binding PersContact}"
                             TextColor="{DynamicResource Gray-900}" />
                     </border:SfBorder>
 

@@ -113,7 +113,7 @@
 
                 <BoxView Style="{StaticResource SeparatorStyle}" />
 
-                <!--  Grid for interests label and icon  -->
+                <!--  Grid for Produits label and icon  -->
                 <Grid
                     x:Name="ProduitsGrid"
                     BackgroundColor="{DynamicResource Gray-White}">

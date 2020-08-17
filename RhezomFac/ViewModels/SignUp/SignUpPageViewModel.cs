@@ -13,11 +13,23 @@ namespace RhezomFac.ViewModels.SignUp
     {
         #region Fields
 
-        private string name;
+        private string pseudo;
 
         private string password;
 
         private string confirmPassword;
+
+        private string numTVA;
+
+        private string nomCommercial;
+
+        private string adresse;
+
+        private string pays;
+
+        private string tel;
+
+        private string persContact;
 
         #endregion
 
@@ -37,23 +49,23 @@ namespace RhezomFac.ViewModels.SignUp
         #region Property
 
         /// <summary>
-        /// Gets or sets the property that bounds with an entry that gets the name from user in the Sign Up page.
+        /// Gets or sets the property that bounds with an entry that gets the Pseudo from user in the Sign Up page.
         /// </summary>
-        public string Name
+        public string Pseudo
         {
             get
             {
-                return this.name;
+                return this.pseudo;
             }
 
             set
             {
-                if (this.name == value)
+                if (this.pseudo == value)
                 {
                     return;
                 }
 
-                this.name = value;
+                this.pseudo = value;
                 this.NotifyPropertyChanged();
             }
         }
@@ -102,17 +114,149 @@ namespace RhezomFac.ViewModels.SignUp
             }
         }
 
+        /// <summary>
+        /// Gets or sets the property that bounds with an entry that gets the Numéro TVA de l'entreprise from user in the Sign Up page.
+        /// </summary>
+        public string NumTVA
+        {
+            get
+            {
+                return this.numTVA;
+            }
+
+            set
+            {
+                if (this.numTVA == value)
+                {
+                    return;
+                }
+
+                this.numTVA = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the property that bounds with an entry that gets the Nom commercial from user in the Sign Up page.
+        /// </summary>
+        public string NomCommercial
+        {
+            get
+            {
+                return this.nomCommercial;
+            }
+
+            set
+            {
+                if (this.nomCommercial == value)
+                {
+                    return;
+                }
+
+                this.nomCommercial = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the property that bounds with an entry that gets the l'adresse from user in the Sign Up page.
+        /// </summary>
+        public string Adresse
+        {
+            get
+            {
+                return this.adresse;
+            }
+
+            set
+            {
+                if (this.adresse == value)
+                {
+                    return;
+                }
+
+                this.adresse = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the property that bounds with an entry that gets the pays from user in the Sign Up page.
+        /// </summary>
+        public string Pays
+        {
+            get
+            {
+                return this.pays;
+            }
+
+            set
+            {
+                if (this.pays == value)
+                {
+                    return;
+                }
+
+                this.pays = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the property that bounds with an entry that gets the téléphone from user in the Sign Up page.
+        /// </summary>
+        public string Tel
+        {
+            get
+            {
+                return this.tel;
+            }
+
+            set
+            {
+                if (this.tel == value)
+                {
+                    return;
+                }
+
+                this.tel = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the property that bounds with an entry that gets the personne de contact from user in the Sign Up page.
+        /// </summary>
+        public string PersContact
+        {
+            get
+            {
+                return this.persContact;
+            }
+
+            set
+            {
+                if (this.persContact == value)
+                {
+                    return;
+                }
+
+                this.persContact = value;
+                this.NotifyPropertyChanged();
+            }
+        }
+
         #endregion
 
         #region Command
 
         /// <summary>
-        /// Gets or sets the command that is executed when the Log In button is clicked.
+        /// Gets or sets the command that is executed when the Se connecter button is clicked.
         /// </summary>
         public Command LoginCommand { get; set; }
 
         /// <summary>
-        /// Gets or sets the command that is executed when the Sign Up button is clicked.
+        /// Gets or sets the command that is executed when the Créer un compte button is clicked.
         /// </summary>
         public Command SignUpCommand { get; set; }
 
@@ -121,7 +265,7 @@ namespace RhezomFac.ViewModels.SignUp
         #region Methods
 
         /// <summary>
-        /// Invoked when the Log in button is clicked.
+        /// Invoked when the Se connecter button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
         private async void LoginClicked(object obj)
@@ -132,7 +276,7 @@ namespace RhezomFac.ViewModels.SignUp
         }
 
         /// <summary>
-        /// Invoked when the Sign Up button is clicked.
+        /// Invoked when the Créer un compte button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
         private async void SignUpClicked(object obj)
