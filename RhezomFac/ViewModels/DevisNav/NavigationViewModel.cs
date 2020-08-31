@@ -42,12 +42,13 @@ namespace RhezomFac.ViewModels.DevisNav
             get
             {
                 //return this.itemTappedCommand ?? (this.itemTappedCommand = new Command<object>(this.NavigateToNextPage));
+                Debug.WriteLine("ItemTappedCommand");
                 return this.itemTappedCommand ??= new Command<object>(this.NavigateToNextPage);
             }
         }
 
         /// <summary>
-        /// Gets or sets a collection of values to be displayed in the Navigation list page.
+        /// Gets or sets a collection of values to be displayed in the Navigation list page. BDD ?
         /// </summary>
         [DataMember(Name = "navigationList")]
         public ObservableCollection<NavigationModel> NavigationList { get; set; }

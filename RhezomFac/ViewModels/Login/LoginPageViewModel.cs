@@ -90,6 +90,14 @@ namespace RhezomFac.ViewModels.Login
         {
             // Do something
             Debug.WriteLine("Login clicked");
+
+            //Conditions
+            //var isValid = true;
+
+            //if (string.IsNullOrEmpty(Password) || Password.Length < 6)
+            //{
+            //    VisualStateManager.GoToState(getPassword(), "Invalide");
+            //}
             await App.Current.MainPage.Navigation.PushAsync(new AccueilPage()); //while testing
         }
 

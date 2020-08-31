@@ -8,7 +8,7 @@
     xmlns:svg="clr-namespace:RhezomFac.Controls"
     xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.ErrorAndEmpty"
     BackgroundColor="{StaticResource Gray-White}"
-    NavigationPage.HasNavigationBar="False">
+    NavigationPage.HasNavigationBar="True">
 
     <!--  Binding context for NoItem page  -->
     <ContentPage.BindingContext>
@@ -39,7 +39,7 @@
                 VerticalOptions="Center">
 
                 <!--  Display the svg illustration image  -->
-                <svg:SVGImage 
+                <svg:SVGImage
                     x:Name="ErrorImage"
                     Margin="{x:OnIdiom Phone='0,0,0,0',
                                        Desktop='0',

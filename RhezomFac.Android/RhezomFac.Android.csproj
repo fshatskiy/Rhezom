@@ -68,25 +68,25 @@
       <Version>2.80.1</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Buttons">
-      <Version>18.2.0.48</Version>
+      <Version>18.2.0.55</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Cards">
-      <Version>18.2.0.48</Version>
+      <Version>18.2.0.55</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.Core">
-      <Version>18.2.0.48</Version>
+      <Version>18.2.0.55</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox">
-      <Version>18.2.0.48</Version>
+      <Version>18.2.0.55</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfListView">
-      <Version>18.2.0.48</Version>
+      <Version>18.2.0.55</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout">
-      <Version>18.2.0.48</Version>
+      <Version>18.2.0.55</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRating">
-      <Version>18.2.0.48</Version>
+      <Version>18.2.0.55</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime.Serialization.Json">
       <Version>4.3.0</Version>

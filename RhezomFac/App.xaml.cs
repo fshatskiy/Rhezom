@@ -8,6 +8,8 @@ using RhezomFac.Views.Login;
 using RhezomFac.Views.Accueil;
 using RhezomFac.Views.Parametres;
 using RhezomFac.Views.DonneesEntreprise;
+using Xamarin.Essentials;
+using RhezomFac.Views.ErrorAndEmpty;
 
 namespace RhezomFac
 {
@@ -21,6 +23,20 @@ namespace RhezomFac
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mjk4NjY3QDMxMzgyZTMyMmUzMGRRWXBhU0ZOWWwzb3FvUFJmRFBTRVdQaUprODhxNUtIampXWUlKN3lyWFk9;Mjk4NjY4QDMxMzgyZTMyMmUzMEJ0ZTZJOTJtY2N1Z2w2MGEvTEVFWnNocjJRZVk0UnIyRUpPVDkyTkJWZE09");
 
             InitializeComponent();
+
+            //internet connection test
+            //var current = Connectivity.NetworkAccess;
+            //var profiles = Connectivity.ConnectionProfiles;
+            //if(current == NetworkAccess.Internet)
+            //{
+            //    MainPage = new NavigationPage(new SimpleLoginPage());
+            //}
+            //else
+            //{
+            //    lblNetworkStatus.Text = "";
+            //}
+
+
 
             //Page racine de l'application
             //MainPage = new MainPage();

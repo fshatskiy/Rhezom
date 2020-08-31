@@ -4,7 +4,9 @@ using System.Text;
 
 namespace RhezomFac.Models
 {
-
+    /***
+     * Pour la base de données ?
+     */
     public class ApplicationData
     {
         #region variables

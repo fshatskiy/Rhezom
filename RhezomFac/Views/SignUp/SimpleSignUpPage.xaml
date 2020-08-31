@@ -6,13 +6,15 @@
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     xmlns:control="clr-namespace:RhezomFac.Controls"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
     xmlns:converter="clr-namespace:RhezomFac.Converters"
     xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
     xmlns:local="clr-namespace:RhezomFac.Views.SignUp"
     xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.SignUp"
-    Title="Sign Up"
+    Title="Page d'inscription"
     BackgroundColor="{DynamicResource Gray-200}"
-    NavigationPage.HasNavigationBar="False">
+    NavigationPage.HasNavigationBar="True">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -52,19 +54,10 @@
                     Spacing="24"
                     VerticalOptions="CenterAndExpand">
 
-                    <!--  Label to display the title of this page  -->
-                    <Label
-                        FontFamily="{StaticResource Montserrat-SemiBold}"
-                        FontSize="20"
-                        HorizontalOptions="Center"
-                        Style="{StaticResource LabelStyle}"
-                        Text="Page d'inscription"
-                        TextColor="{DynamicResource Gray-900}" />
 
-                    <!--  Label to display the description of this page  -->
                     <Label
                         x:Name="text"
-                        Margin="0,-16,0,8"
+                        Margin="0,16,0,8"
                         FontFamily="{StaticResource Montserrat-Medium}"
                         HorizontalTextAlignment="Center"
                         Style="{StaticResource LabelStyle}"
@@ -164,18 +157,17 @@
                     </border:SfBorder>
 
                     <!--  Entry to get PAYS from user  A CHANGER LES PARAMETRES -->
-                    <border:SfBorder
-                        BackgroundColor="{DynamicResource Gray-White}"
-                        BorderColor="{Binding Source={x:Reference PaysEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
-                        Style="{StaticResource SfBorderStyle}">
-                        <control:BorderlessEntry
-                            x:Name="PaysEntry"
-                            Placeholder="Pays"
-                            PlaceholderColor="{DynamicResource Gray-700}"
-                            Style="{StaticResource EntryStyle}"
-                            Text="{Binding Pays}"
-                            TextColor="{DynamicResource Gray-900}" />
-                    </border:SfBorder>
+
+                    <combobox:SfComboBox HeightRequest="40"
+                                         x:Name="comboBox"
+                                         Text="Sélectionnez votre pays"
+                                         Margin="5,0">
+                        <combobox:SfComboBox.ComboBoxSource>
+                            <ListCollection:List x:TypeArguments="x:String">
+                                <x:String>Belgique</x:String>
+                            </ListCollection:List>
+                        </combobox:SfComboBox.ComboBoxSource>
+                    </combobox:SfComboBox>
 
                     <!--  Entry to get NUMERO DE TEL from user  A CHANGER LES PARAMETRES -->
                     <border:SfBorder
@@ -198,12 +190,64 @@
                         Style="{StaticResource SfBorderStyle}">
                         <control:BorderlessEntry
                             x:Name="PersContactEntry"
-                            Placeholder="Numéro de contact"
+                            Placeholder="Numéro de la personne de contact"
                             PlaceholderColor="{DynamicResource Gray-700}"
                             Style="{StaticResource EntryStyle}"
                             Text="{Binding PersContact}"
                             TextColor="{DynamicResource Gray-900}" />
                     </border:SfBorder>
+
+                    <StackLayout
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal"
+                        Spacing="1"
+                        VerticalOptions="End">
+
+                        <StackLayout.Padding>
+                            <OnIdiom
+                            x:TypeArguments="Thickness"
+                            Default="0, 48, 0, 0"
+                            Phone="0" />
+                        </StackLayout.Padding>
+                        <!--CHECKBOX CONDITIONS-->
+                        <CheckBox x:Name="cb" IsChecked="False" >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Color"
+                                Value="Red" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                    <VisualState x:Name="IsChecked">
+                                        <VisualState.Setters>
+                                            <Setter Property="Color"
+                                Value="Green" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </CheckBox>
+                        <!--x:Name="CB1"
+                            IsChecked="False" CheckedChanged="CheckBox_CheckedChanged"
+                            />-->
+                        <Label x:Name="LabelConditions"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            HorizontalOptions="CenterAndExpand"
+                            HorizontalTextAlignment="Center"
+                            Style="{StaticResource LabelStyle}"
+                            Text="J'ai lu et j'accepte les Conditions générales d'utilisation"
+                            TextDecorations="Underline"
+                            TextColor="{DynamicResource Gray-800}"
+                            VerticalTextAlignment="Center" >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <!--<CheckBox x:Name="cb1" Content="Two-state CheckBox"
+                              IsChecked="False" CheckedChanged="cb1_CheckedChanged" />-->
 
                     <!--  Sign-up button  -->
                     <buttons:SfButton
@@ -211,7 +255,8 @@
                         CornerRadius="20"
                         FontFamily="{StaticResource Montserrat-SemiBold}"
                         Style="{StaticResource SfButtonStyle}"
-                        Text="Créer un compte" />
+                        Text="Créer un compte"
+                        Clicked="SfButton_Clicked" />
                 </StackLayout>
 
                 <StackLayout

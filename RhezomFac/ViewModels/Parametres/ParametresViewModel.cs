@@ -1,4 +1,5 @@
-﻿using RhezomFac.Views.Login;
+﻿using RhezomFac.Views.ConditionsGenerales;
+using RhezomFac.Views.Login;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -55,18 +56,22 @@ namespace RhezomFac.ViewModels.Parametres
         /// Invoked when the bookmark button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
-        private void ConditionsButtonClicked(object obj)
+        private async void ConditionsButtonClicked(object obj)
         {
             this.UpdateSelectedItemColor(obj);
+            Debug.WriteLine("Conditions clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new ConditionsPage()); //pas PageConditionsPage
         }
 
         /// <summary>
         /// Invoked when the activity button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
-        private void ChangeMDPButtonClicked(object obj)
+        private async void ChangeMDPButtonClicked(object obj)
         {
             this.UpdateSelectedItemColor(obj);
+            Debug.WriteLine("Conditions clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new SimpleResetPasswordPage());
         }
 
         /// <summary>

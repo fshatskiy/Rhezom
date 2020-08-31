@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="RhezomFac.Views.Parametres.ParametresPage"
+    x:Class="RhezomFac.Views.ConditionsGenerales.ConditionsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
     xmlns:helper="clr-namespace:RhezomFac.Helpers"
-    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.Parametres" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-    xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.ConditionsGenerales"
     BackgroundColor="{DynamicResource Gray-White}"
     NavigationPage.HasNavigationBar="True"
-        Title="PARAMÈTRES">
+    Title="Conditions générales">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -20,19 +19,50 @@
     </ContentPage.Resources>
 
     <ContentPage.BindingContext>
-        <viewModel:ParametresViewModel />
+        <viewModel:ConditionsViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-
         <ScrollView>
             <StackLayout Spacing="0">
 
                 <BoxView Margin="0,0,0,8" Style="{StaticResource SeparatorStyle}" />
 
-                <!--  Grid for Conditions d'utilisation label and icon  -->
+                <!--  Grid for Conditions générales d'utilisation label and icon  -->
                 <Grid
-                    x:Name="ConditionsGrid"
+                    x:Name="CondGenGrid"
+                    BackgroundColor="{DynamicResource Gray-White}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        helper:RTLHelper.Margin="2, 0, 8, 0"
+                        Style="{StaticResource ProfileIconLabelStyle}" />
+                        <!--Text="{StaticResource Interests}"-->
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,20"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="17"
+                        Style="{StaticResource ProfileLabelStyle}"
+                        Text="Afficher les conditions générales d'utilisation" />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CondGenCommand}" CommandParameter="{x:Reference CondGenGrid}" />
+                    </Grid.GestureRecognizers>
+
+                </Grid>
+
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
+                <!--  Grid for Effacer mes données label and icon  -->
+                <Grid
+                    x:Name="EffacerDonneesGrid"
                     BackgroundColor="{DynamicResource Gray-White}">
 
                     <Grid.ColumnDefinitions>
@@ -44,7 +74,7 @@
                         Grid.Column="0"
                         helper:RTLHelper.Margin="16, 0, 8, 0"
                         Style="{StaticResource ProfileIconLabelStyle}" />
-                    <!--Text="{StaticResource ClearBookmark}"-->
+                        <!--Text="{StaticResource ClearBookmark}"-->
 
                     <Label
                         Grid.Column="1"
@@ -52,19 +82,19 @@
                         FontFamily="{StaticResource Montserrat-SemiBold}"
                         FontSize="17"
                         Style="{StaticResource ProfileLabelStyle}"
-                        Text="Conditions générales d'utilisation" />
+                        Text="Effacer mes données personnelles" />
 
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ConditionsCommand}" CommandParameter="{x:Reference ConditionsGrid}" />
+                        <TapGestureRecognizer Command="{Binding EffacerDonneesCommand}" CommandParameter="{x:Reference EffacerDonneesGrid}" />
                     </Grid.GestureRecognizers>
 
                 </Grid>
 
                 <BoxView Style="{StaticResource SeparatorStyle}" />
 
-                <!--  Grid for Changer mon mot de passe label and icon  -->
-                <Grid
-                    x:Name="ChangeMDPGrid"
+                <!--  Grid for activity label and icon  -->
+                <!--<Grid
+                    x:Name="ActivityGrid"
                     BackgroundColor="{DynamicResource Gray-White}">
 
                     <Grid.ColumnDefinitions>
@@ -75,28 +105,28 @@
                     <Label
                         Grid.Column="0"
                         helper:RTLHelper.Margin="16, 0, 8, 0"
-                        Style="{StaticResource ProfileIconLabelStyle}" />
-                    <!--Text="{StaticResource Activity}"-->
+                        Style="{StaticResource ProfileIconLabelStyle}"
+                        Text="{StaticResource Activity}" />
 
                     <Label
                         Grid.Column="1"
-                        Margin="0,20"
+                        Margin="0,14"
                         FontFamily="{StaticResource Montserrat-SemiBold}"
-                        FontSize="17"
+                        FontSize="14"
                         Style="{StaticResource ProfileLabelStyle}"
-                        Text="Changer mon mot de passe" />
+                        Text="Activity" />
 
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ChangeMDPCommand}" CommandParameter="{x:Reference ChangeMDPGrid}" />
+                        <TapGestureRecognizer Command="{Binding ActivityCommand}" CommandParameter="{x:Reference ActivityGrid}" />
                     </Grid.GestureRecognizers>
 
                 </Grid>
 
                 <BoxView Style="{StaticResource SeparatorStyle}" />
 
-                <!--  Grid for Se déconnecter label and icon  -->
+                --><!--  Grid for profile label and icon  --><!--
                 <Grid
-                    x:Name="DeconnexionGrid"
+                    x:Name="ProfileGrid"
                     BackgroundColor="{DynamicResource Gray-White}">
 
                     <Grid.ColumnDefinitions>
@@ -107,28 +137,26 @@
                     <Label
                         Grid.Column="0"
                         helper:RTLHelper.Margin="16, 0, 8, 0"
-                        Style="{StaticResource ProfileIconLabelStyle}" />
-                    <!--Text="{StaticResource Profile}"-->
+                        Style="{StaticResource ProfileIconLabelStyle}"
+                        Text="{StaticResource Profile}" />
 
                     <Label
                         Grid.Column="1"
-                        Margin="0,20"
+                        Margin="0,14"
                         FontFamily="{StaticResource Montserrat-SemiBold}"
-                        FontSize="17"
+                        FontSize="14"
                         Style="{StaticResource ProfileLabelStyle}"
-                        Text="Se déconnecter" />
+                        Text="Profile" />
 
                     <Grid.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding DeconnexionCommand}" Tapped="TapGestureRecognizer_Tapped"  CommandParameter="{x:Reference DeconnexionGrid}" />
+                        <TapGestureRecognizer Command="{Binding ProfileCommand}" CommandParameter="{x:Reference ProfileGrid}" />
                     </Grid.GestureRecognizers>
 
                 </Grid>
 
-                <BoxView Style="{StaticResource SeparatorStyle}" />
+                <BoxView Style="{StaticResource SeparatorStyle}" />-->
 
             </StackLayout>
-
         </ScrollView>
-        <!--</StackLayout>-->
     </ContentPage.Content>
 </ContentPage>

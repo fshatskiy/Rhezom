@@ -279,11 +279,12 @@ namespace RhezomFac.ViewModels.SignUp
         /// Invoked when the Créer un compte button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private async void SignUpClicked(object obj)
+        private void SignUpClicked(object obj)
         {
             // Mettre en place des conditions !
             Debug.WriteLine("Envoyer clicked");
-            await App.Current.MainPage.Navigation.PushAsync(new SimpleLoginPage());
+            //await App.Current.MainPage.Navigation.PushAsync(new SimpleLoginPage());
+            //afin de ne pas perdre la page en cas du display alert
         }
 
         #endregion
