@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using System;
+using System.Linq;
 //using RhezomFac.Views.AccueilPage;
 
 namespace RhezomFac.ViewModels.Login
@@ -91,6 +93,18 @@ namespace RhezomFac.ViewModels.Login
             // Do something
             Debug.WriteLine("Login clicked");
 
+            if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
+            {
+                await App.Current.MainPage.DisplayAlert("Champs vides", "Veuillez indiquer votre adresse mail et votre mot de passe pour voir connecter", "Ok");
+            }
+            else if (Password.Length < 6)
+            {
+                    await App.Current.MainPage.DisplayAlert("Erreur", "Veillez indiquer une adresse mail ou un mot de passe valide", "Ok");
+            } else
+            {
+                await App.Current.MainPage.Navigation.PushAsync(new AccueilPage()); //while testing
+            }
+
             //Conditions
             //var isValid = true;
 
@@ -98,7 +112,7 @@ namespace RhezomFac.ViewModels.Login
             //{
             //    VisualStateManager.GoToState(getPassword(), "Invalide");
             //}
-            await App.Current.MainPage.Navigation.PushAsync(new AccueilPage()); //while testing
+            //await App.Current.MainPage.Navigation.PushAsync(new AccueilPage()); //while testing
         }
 
         /// <summary>

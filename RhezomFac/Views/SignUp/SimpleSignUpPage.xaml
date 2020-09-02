@@ -190,7 +190,7 @@
                         Style="{StaticResource SfBorderStyle}">
                         <control:BorderlessEntry
                             x:Name="PersContactEntry"
-                            Placeholder="Numéro de la personne de contact"
+                            Placeholder="Numéro, nom et prénom"
                             PlaceholderColor="{DynamicResource Gray-700}"
                             Style="{StaticResource EntryStyle}"
                             Text="{Binding PersContact}"

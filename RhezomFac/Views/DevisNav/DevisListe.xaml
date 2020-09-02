@@ -19,7 +19,13 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Créer un devis" Priority="0" Order="Secondary" Clicked="CreerDevis_Clicked"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
+
+
 
         <Grid>
             <Grid.RowDefinitions>

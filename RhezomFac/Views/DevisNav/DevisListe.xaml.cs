@@ -1,4 +1,6 @@
 ﻿using RhezomFac.DataService;
+using RhezomFac.Views.CreationDevis;
+using System.Diagnostics;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
@@ -18,6 +20,12 @@ namespace RhezomFac.Views.DevisNav
         {
             System.Diagnostics.Debug.WriteLine("back button clicked clicked");
             App.Current.MainPage.Navigation.PopAsync();
+        }
+
+        private async void CreerDevis_Clicked(object sender, System.EventArgs e)
+        {
+            Debug.WriteLine("Créer devis clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new CreationDevisFormPage());
         }
     }
 }

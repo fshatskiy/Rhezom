@@ -279,14 +279,48 @@ namespace RhezomFac.ViewModels.SignUp
         /// Invoked when the Créer un compte button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void SignUpClicked(object obj)
+        private async void SignUpClicked(object obj)
         {
             // Mettre en place des conditions !
             Debug.WriteLine("Envoyer clicked");
             //await App.Current.MainPage.Navigation.PushAsync(new SimpleLoginPage());
             //afin de ne pas perdre la page en cas du display alert
+            if (string.IsNullOrEmpty(Pseudo) ||
+                string.IsNullOrEmpty(Password) ||
+                string.IsNullOrEmpty(ConfirmPassword) ||
+                string.IsNullOrEmpty(NumTVA) ||
+                string.IsNullOrEmpty(NomCommercial) ||
+                string.IsNullOrEmpty(Adresse) ||
+                string.IsNullOrEmpty(Tel) ||
+                string.IsNullOrEmpty(PersContact))
+            {
+                await App.Current.MainPage.DisplayAlert("Champs vides", "Veuillez remplir tous les champs nécessaires pour l'inscription", "Ok");
+            }
+            else if (Pseudo.Length < 6)
+            {
+                await App.Current.MainPage.DisplayAlert("Erreur", "Le pseudo doit contenir au moins 6 caractères", "Ok");
+            }
+            else if (Password.Length < 6 && ConfirmPassword.Length < 6)
+            {
+                    await App.Current.MainPage.DisplayAlert("Erreur", "Votre mot de passe doit contenir au moins 6 caractères", "Ok");
+            }
+            else if (!Password.Equals(ConfirmPassword))
+            {
+                    await App.Current.MainPage.DisplayAlert("Erreur", "Vos mots de passe ne correspondent pas", "Ok");
+            }
+            else if (NumTVA.Length < 12 && (!NumTVA.Contains("BE")))
+            {
+                await App.Current.MainPage.DisplayAlert("Erreur", "Votre numéro de TVA doit contenir au moins 12 caractères et commencer par 'BE'", "Ok");
+            }
+            else if (Tel.Length < 9) //tel fixe et mobile
+            {
+                await App.Current.MainPage.DisplayAlert("Erreur", "Votre numéro de téléphone a été mal indiqué", "Ok");
+            }
+            else
+            {
+                    await App.Current.MainPage.Navigation.PopAsync(); //while testing
+            }
+            #endregion
         }
-
-        #endregion
     }
 }

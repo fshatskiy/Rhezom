@@ -19,6 +19,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Créer une Facture" Priority="0" Order="Secondary" Clicked="CreerFacture_Clicked"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
 
         <Grid>

@@ -6,7 +6,7 @@ using Xamarin.Forms.Internals;
 namespace RhezomFac.Converters
 {
     /// <summary>
-    /// This class have methods to convert the Boolean values to color objects. 
+    /// This class have methods to convert the Boolean values to color objects.
     /// This is needed to validate in the Entry controls. If the validation is failed, it will return the color code of error, otherwise it will be transparent.
     /// </summary>
     [Preserve(AllMembers = true)]
@@ -80,7 +80,7 @@ namespace RhezomFac.Converters
         /// <param name="targetType">Gets the target type.</param>
         /// <param name="parameter">Gets the parameter.</param>
         /// <param name="culture">Gets the culture.</param>
-        /// <returns>Returns the string.</returns>        
+        /// <returns>Returns the string.</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return null;

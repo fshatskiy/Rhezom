@@ -10,6 +10,7 @@ using RhezomFac.Views.Parametres;
 using RhezomFac.Views.DonneesEntreprise;
 using Xamarin.Essentials;
 using RhezomFac.Views.ErrorAndEmpty;
+using RhezomFac.Views.CreationDevis;
 
 namespace RhezomFac
 {

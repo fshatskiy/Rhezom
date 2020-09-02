@@ -59,6 +59,12 @@
     <Compile Update="Views\ConditionsGenerales\ConditionsPage.xaml.cs">
       <DependentUpon>ConditionsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\CreationDevis\CreationDevisFormPage.xaml.cs">
+      <DependentUpon>CreationDevisFormPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CreationFacture\CreationFactureFormPage.xaml.cs">
+      <DependentUpon>CreationFactureFormPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\DevisNav\DevisListe.xaml.cs">
       <DependentUpon>DevisListe.xaml</DependentUpon>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Update="Views\Parametres\ParametresPage.xaml.cs">
       <DependentUpon>ParametresPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ProfilEntreprise\ProfilEntrepriseFormPage.xaml.cs">
+      <DependentUpon>ProfilEntrepriseFormPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Templates\NavigationListTemplate.xaml.cs">
       <DependentUpon>NavigationListTemplate.xaml</DependentUpon>
@@ -107,10 +116,16 @@
     <EmbeddedResource Update="Views\ConditionsGenerales\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CreationDevis\BusinessRegistrationFormPage.xaml">
+    <EmbeddedResource Update="Views\CreationDevis\CreationDevisFormPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\CreationDevis\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CreationFacture\CreationFactureFormPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CreationFacture\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DevisNav\DevisListe.xaml">
@@ -156,6 +171,12 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Parametres\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ProfilEntreprise\ProfilEntrepriseFormPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ProfilEntreprise\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SignUp\SimpleEmailEntry.xaml">

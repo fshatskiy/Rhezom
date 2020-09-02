@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ResourceDictionary
-    x:Class="RhezomFac.Views.CreationDevis.Styles"
+    x:Class="RhezomFac.Views.ProfilEntreprise.Styles"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
@@ -119,7 +119,7 @@
             <Setter.Value>
                 <graphics:SfLinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <graphics:SfLinearGradientBrush.GradientStops>
-
+                        
                         <graphics:SfGradientStop Offset="0.0" Color="{StaticResource GradientStart}" />
                         <graphics:SfGradientStop Offset="1.0" Color="{StaticResource GradientEnd}" />
                     </graphics:SfLinearGradientBrush.GradientStops>

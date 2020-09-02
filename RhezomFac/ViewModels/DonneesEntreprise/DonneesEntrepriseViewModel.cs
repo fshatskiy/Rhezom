@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using RhezomFac.Views.ProfilEntreprise;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -49,9 +51,11 @@ namespace RhezomFac.ViewModels.DonneesEntreprise
         /// Invoked when the Profil de l'entreprise button is clicked.
         /// </summary>
         /// <param name="obj">The object</param>
-        private void ProfilEntrClicked(object obj)
+        private async void ProfilEntrClicked(object obj)
         {
             this.UpdateSelectedItemColor(obj);
+            Debug.WriteLine("Factures clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new ProfilEntrepriseFormPage());
         }
 
         /// <summary>

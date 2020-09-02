@@ -19,6 +19,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <!--<ContentPage.ToolbarItems>-->
+        <!--<ToolbarItem Text="Créer un brouillon" Priority="0" Order="Secondary" Clicked="CreerBrouillon_Clicked"/>-->
+    <!--</ContentPage.ToolbarItems>-->
+
     <ContentPage.Content>
 
         <Grid>

@@ -61,7 +61,7 @@ namespace RhezomFac.ViewModels.FacturesNav
         private void NavigateToNextPage(object selectedItem)
         {
             // A l'ouverture d'une facture
-            System.Diagnostics.Debug.WriteLine("Devis clicked");
+            System.Diagnostics.Debug.WriteLine("Facture clicked");
         }
 
         #endregion

@@ -19,11 +19,6 @@ namespace RhezomFac.Views.Parametres
             InitializeComponent();
         }
 
-        private void ClickToShowPopup_Clicked(object sender, System.EventArgs e)
-        {
-            //popupLayout.Show();
-        }
-
         private async void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
         {
             bool answer = await DisplayAlert("Déconnexion", "Voulez-vous vraiment vous déconnecter ?", "Oui", "Non");

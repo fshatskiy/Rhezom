@@ -10,11 +10,11 @@ using Xamarin.Forms.Internals;
 namespace RhezomFac.Controls
 {
     [Preserve(AllMembers = true)]
-    public class CountryComboBox : SfComboBox, INotifyPropertyChanged
+    public class ProduitsComboBox : SfComboBox, INotifyPropertyChanged
     {
         #region Fields
 
-        private object country;
+        private object produit;
 
         private string phoneNumberPlaceHolder = "Phone Number";
 
@@ -26,66 +26,66 @@ namespace RhezomFac.Controls
 
         private string[] states;
 
-        private string countryCode;
+        private string produitCode;
 
         #endregion
 
         #region Constructor
-        public CountryComboBox()
+        public ProduitsComboBox()
         {
             BindingContext = this;
 
-            Countries = new List<ProfilEntrepriseCountryModel>();
-            Countries.Add(new ProfilEntrepriseCountryModel()
+            Countries = new List<DevisProduitsModel>();
+            Countries.Add(new DevisProduitsModel()
             {
-                Country = "Australia",
+                Produit = "Australia",
                 States = new string[] { "Tasmania", "Victoria", "Queensland", "Northen Territory" }
             });
-            Countries.Add(new ProfilEntrepriseCountryModel()
+            Countries.Add(new DevisProduitsModel()
             {
-                Country = "Brazil",
+                Produit = "Brazil",
                 States = new string[] { "Bahia", "Ceara", "Goias", "Maranhao" }
             });
-            Countries.Add(new ProfilEntrepriseCountryModel()
+            Countries.Add(new DevisProduitsModel()
             {
-                Country = "Canada",
+                Produit = "Canada",
                 States = new string[] { "Manitoba", "Ontario", "Quebec", "Yukon" }
             });
-            Countries.Add(new ProfilEntrepriseCountryModel()
+            Countries.Add(new DevisProduitsModel()
             {
-                Country = "India",
+                Produit = "India",
                 States = new string[] { "Assam", "Gujarat", "Haryana", "Tamil Nadu" }
             });
-            Countries.Add(new ProfilEntrepriseCountryModel()
+            Countries.Add(new DevisProduitsModel()
             {
-                Country = "USA",
+                Produit = "USA",
                 States = new string[] { "California", "Florida", "New York", "Washington" }
             });
 
             DataSource = Countries;
-            this.SetBinding(SfComboBox.SelectedItemProperty, "Country", BindingMode.TwoWay);
-            DisplayMemberPath = "Country";
-            Watermark = "Select Country";
+            this.SetBinding(SfComboBox.SelectedItemProperty, "Produit", BindingMode.TwoWay);
+            DisplayMemberPath = "Produit";
+            Watermark = "Sélectionnez le produit";
             this.VerticalOptions = LayoutOptions.CenterAndExpand;
         }
         #endregion
 
         #region Properties
         /// <summary>
-        /// Gets or sets the property that bounds with a ComboBox that gets the Country from user.
+        /// Gets or sets the property that bounds with a ComboBox that gets the Produit from user.
         /// </summary>
-        public object Country
+        public object Produit
         {
-            get { return country; }
+            get { return produit; }
             set
             {
-                country = value;
+                produit = value;
                 UpdateStateAndPhoneNumberFormat();
             }
         }
 
         /// <summary>
-        /// Gets or set the string property, that represents the phone number format based on country. 
+        /// Gets or set the string property, that represents the phone number format based on Produit.
         /// </summary>
         public string PhoneNumberPlaceHolder
         {
@@ -98,7 +98,7 @@ namespace RhezomFac.Controls
         }
 
         /// <summary>
-        /// Gets or set the string property, that represents the phone number based on country. 
+        /// Gets or set the string property, that represents the phone number based on Produit.
         /// </summary>
         public string PhoneNumber
         {
@@ -112,21 +112,21 @@ namespace RhezomFac.Controls
 
 
         /// <summary>
-        /// Gets or sets the string property, which holds the contry code based on user input. 
+        /// Gets or sets the string property, which holds the contry code based on user input.
         /// </summary>
-        public string CountryCode
+        public string ProduitCode
         {
-            get { return countryCode; }
+            get { return produitCode; }
             set
             {
-                countryCode = value;
+                produitCode = value;
                 NotifyPropertyChanged();
             }
         }
 
 
         /// <summary>
-        /// Gets or set the string property, that represents the user given city. 
+        /// Gets or set the string property, that represents the user given city.
         /// </summary>
         public string City
         {
@@ -152,7 +152,7 @@ namespace RhezomFac.Controls
         }
 
         /// <summary>
-        /// Gets or sets array collection that contains states based on country selection. 
+        /// Gets or sets array collection that contains states based on Produit selection.
         /// </summary>
         public string[] States
         {
@@ -165,7 +165,7 @@ namespace RhezomFac.Controls
         }
 
         /// <summary>
-        /// Gets or sets string property that represents mask format for phone number. 
+        /// Gets or sets string property that represents mask format for phone number.
         /// </summary>
         private string _mask = "";
         public string Mask
@@ -179,9 +179,9 @@ namespace RhezomFac.Controls
         }
 
         /// <summary>
-        /// Gets or sets the collection property, which contains the countries data. 
+        /// Gets or sets the collection property, which contains the countries data.
         /// </summary>
-        public List<ProfilEntrepriseCountryModel> Countries { get; set; }
+        public List<DevisProduitsModel> Countries { get; set; }
 
         #endregion
 
@@ -190,49 +190,51 @@ namespace RhezomFac.Controls
         /// <summary>
         /// Occurs when the property is changed.
         /// </summary>
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public event PropertyChangedEventHandler PropertyChanged;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 
         #endregion
 
         #region Methods
 
         /// <summary>
-        /// Method used to rest State and City and update PhoneNumber format. 
+        /// Method used to rest State and City and update PhoneNumber format.
         /// </summary>
         private void UpdateStateAndPhoneNumberFormat()
         {
             State = null;
             PhoneNumber = string.Empty;
             City = string.Empty;
-            ProfilEntrepriseCountryModel countryModel = Country as ProfilEntrepriseCountryModel;
-            States = countryModel.States;
+            DevisProduitsModel produitModel = Produit as DevisProduitsModel;
+            States = produitModel.States;
 
-            switch (countryModel.Country)
+            switch (produitModel.Produit)
             {
                 case "Australia":
                     PhoneNumberPlaceHolder = "e.g. X XXXX XXXX";
                     Mask = "(+61)X XXXX XXXX";
-                    CountryCode = "(+61)";
+                    ProduitCode = "(+61)";
                     break;
                 case "Brazil":
                     PhoneNumberPlaceHolder = "e.g. XX XXXX XXXX";
                     Mask = "(+55)XX XXXX XXXX";
-                    CountryCode = "(+55)";
+                    ProduitCode = "(+55)";
                     break;
                 case "Canada":
                     PhoneNumberPlaceHolder = "e.g. XXXXXXXXX";
                     Mask = "(+1)XXXXXXXXX";
-                    CountryCode = "(+1)";
+                    ProduitCode = "(+1)";
                     break;
                 case "India":
                     PhoneNumberPlaceHolder = "e.g. XXXXX-XXXXX";
                     Mask = "(+91)XXXXX-XXXXX";
-                    CountryCode = "(+91)";
+                    ProduitCode = "(+91)";
                     break;
                 case "USA":
                     PhoneNumberPlaceHolder = "e.g. XXX-XXX-XXX";
                     Mask = "(+1)XXX-XXX-XXX";
-                    CountryCode = "(+1)";
+                    ProduitCode = "(+1)";
                     break;
                 default:
                     break;

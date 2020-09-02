@@ -1,4 +1,5 @@
 ﻿using RhezomFac.DataService;
+using System.Diagnostics;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
@@ -19,5 +20,11 @@ namespace RhezomFac.Views.BrouillonsNav
             System.Diagnostics.Debug.WriteLine("back button clicked clicked");
             App.Current.MainPage.Navigation.PopAsync();
         }
+
+        //private async void CreerBrouillon_Clicked(object sender, System.EventArgs e)
+        //{
+        //    Debug.WriteLine("Créer brouillon clicked");
+        //    await App.Current.MainPage.Navigation.PushAsync(new CreationBrouillonFormPage());
+        //}
     }
 }

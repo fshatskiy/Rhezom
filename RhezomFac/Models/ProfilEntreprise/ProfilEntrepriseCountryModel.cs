@@ -6,7 +6,7 @@ namespace RhezomFac.Models
     /// Model for SocialProfile
     /// </summary>
     [Preserve(AllMembers = true)]
-    public class CountryModel
+    public class ProfilEntrepriseCountryModel
     {
         #region Properties
 
