@@ -66,18 +66,19 @@
                         FontSize="20"
                         HorizontalTextAlignment="Center"
                         Style="{StaticResource LabelStyle}"
-                        Text="Connexion"
+                        Text="Bienvenue sur Rhezom App"
                         TextColor="{DynamicResource Gray-900}" />
 
-                    <!--  Label to display the description of this page  -->
+                    <!--  Label to display the connection of the profile  -->
                     <Label
                         Grid.Row="1"
                         Margin="0,8"
                         FontFamily="{StaticResource Montserrat-Medium}"
                         HorizontalTextAlignment="Center"
                         Style="{StaticResource LabelStyle}"
-                        Text="Rhezom App"
-                        TextColor="{DynamicResource Gray-800}" />
+                        Text=""
+                        TextColor="{DynamicResource Red}"
+                        x:Name="LabelConnection" />
 
                     <!--  Entry to get email ID from user  -->
                     <local:SimpleEmailEntry Grid.Row="2" Padding="0,24" />
