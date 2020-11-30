@@ -8,7 +8,6 @@ namespace RhezomFac.Models
     {
 
         #region variables
-
         private string _nomCommercial;
 
         public string NomCommercial

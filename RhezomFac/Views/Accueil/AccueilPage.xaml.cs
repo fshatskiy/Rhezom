@@ -35,7 +35,7 @@ namespace RhezomFac.Views.Accueil
         {
             Device.BeginInvokeOnMainThread(async () =>
             {
-                var exit = await this.DisplayAlert("Confirm Exit", "Do you really want to exit the application?", "Yes", "No").ConfigureAwait(false);
+                var exit = await this.DisplayAlert("Quitter l'application", "Voulez-vous réellement quitter l'application ?", "Oui", "Non").ConfigureAwait(false);
                 if(exit)
                     System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
                 return;

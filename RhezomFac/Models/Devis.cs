@@ -33,7 +33,7 @@ namespace RhezomFac.Models
         public Devis(DateTime dateValidite,
                      int statut,
                      string logo,
-                     DateTime date,
+                     DateTime dateEmission,
                      string numTVAClient,
                      string numTVAEntr,
                      string adrClient,
@@ -48,13 +48,12 @@ namespace RhezomFac.Models
                      string mailEntr,
                      string mailClient,
                      string lienWeb,
-                     List<string> listeProd,
+                     List<Produit> listeProd,
                      int qtiteProd,
                      float totalHT,
                      float totalTVA,
-                     string infoAdd,
-                     DateTime dateEmission)
-            : base(logo, date, numTVAClient, numTVAEntr, adrClient, adrEntr, pays, bCE, iBAN, bIC, numTelFixe, numMobile, numFax, mailEntr, mailClient, lienWeb, listeProd, qtiteProd, totalHT, totalTVA, infoAdd, dateEmission)
+                     string infoAdd)
+            : base(logo, dateEmission, numTVAClient, numTVAEntr, adrClient, adrEntr, pays, bCE, iBAN, bIC, numTelFixe, numMobile, numFax, mailEntr, mailClient, lienWeb, listeProd, qtiteProd, totalHT, totalTVA, infoAdd)
         {
             this._dateValidite = dateValidite;
             this._statut = statut;

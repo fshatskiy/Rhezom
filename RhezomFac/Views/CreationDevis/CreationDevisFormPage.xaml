@@ -384,7 +384,7 @@
                         Margin="0,24,0,4"
                         HeightRequest="18"
                         FontSize="12"
-                        Text="Information additionnelle"
+                        Text="Informations additionnelles"
                         TextColor="{DynamicResource Gray-800}" />
 
                 <border:SfBorder BorderColor="{Binding Source={x:Reference InfoAddEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"

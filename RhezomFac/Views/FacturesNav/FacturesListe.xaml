@@ -31,27 +31,13 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <!--  Title View  --><!--
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <controls:TitleView Title="FACTURES" Grid.Column="1" Grid.Row="0" />
-
-                <buttons:SfButton  x:Name="backButton"  Clicked="BackButton_Clicked" Grid.Column="0"
-                                   CornerRadius="4"
-                                   CommandParameter="{x:Reference backButton}"
-                                   Style="{StaticResource IconButtonStyle}" Text="{StaticResource Back}"/>
-            </Grid>-->
-
             <StackLayout Grid.Row="1" Spacing="0">
 
                 <listView:SfListView
                     Padding="15,0,10,0"
                     AutoFitMode="Height"
                     IsScrollBarVisible="false"
-                    ItemSpacing="0,0,0,5"
+                    ItemSpacing="0,27,0,0"
                     ItemsSource="{Binding NavigationList}"
                     SelectionBackgroundColor="Transparent"
                     TapCommand="{Binding ItemTappedCommand}"

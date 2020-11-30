@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
-    x:Class="RhezomFac.Views.DevisNav.DevisListe"
+    x:Class="RhezomFac.Views.NoteDeCreditNav.NoteDeCreditListe"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:RhezomFac.Controls"
     xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
     xmlns:template="clr-namespace:RhezomFac.Views.Templates"
-    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.DevisNav" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-    xmlns:ViewModels="clr-namespace:RhezomFac.ViewModels.CreationDevis"
+    xmlns:viewModel="clr-namespace:RhezomFac.ViewModels.NoteDeCreditNav"
     BackgroundColor="{DynamicResource Gray-White}"
     NavigationPage.HasNavigationBar="True"
-        Title="DEVIS">
+        Title="NOTE DE CREDIT">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -21,17 +20,10 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Créer un devis" Priority="0" Order="Secondary" Clicked="CreerDevis_Clicked"/>
+        <ToolbarItem Text="Créer une Note de crédit" Priority="0" Order="Secondary" Clicked="NoteDeCredit_Clicked"/>
     </ContentPage.ToolbarItems>
 
-    <!--test-->
-    <!--<ContentPage.BindingContext>
-        <ViewModels:MainDevisViewModel />
-    </ContentPage.BindingContext>-->
-
     <ContentPage.Content>
-
-
 
         <Grid>
             <Grid.RowDefinitions>
@@ -39,41 +31,22 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <!--  Title View  --><!--
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <controls:TitleView Title="DEVIS" Grid.Column="1" Grid.Row="0" />
-
-                <buttons:SfButton  x:Name="backButton"  Clicked="BackButton_Clicked" Grid.Column="0"
-                                   CornerRadius="4"
-                                   CommandParameter="{x:Reference backButton}"
-                                   Style="{StaticResource IconButtonStyle}" Text="{StaticResource Back}"/>
-            </Grid>-->
-
             <StackLayout Grid.Row="1" Spacing="0">
 
-                <!--ItemsSource="{Binding NavigationList}"-->
                 <listView:SfListView
                     Padding="15,0,10,0"
                     AutoFitMode="Height"
                     IsScrollBarVisible="false"
-                    ItemSpacing="0,0,0,5"
-                    ItemsSource="{Binding DevisListe}"
+                    ItemSpacing="0,27,0,0"
+                    ItemsSource="{Binding NavigationList}"
                     SelectionBackgroundColor="Transparent"
                     TapCommand="{Binding ItemTappedCommand}"
                     VerticalOptions="FillAndExpand">
                     <listView:SfListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <StackLayout>
-                                    <Label Text="{Binding NumTVAClient}"></Label>
-                                    <Label Text="{Binding DateEmission}"></Label>
-                                </StackLayout>
-                                <!--View of each card item-->
-                                <!--<controls:CustomShadowFrame
+                                <!--  View of each card item  -->
+                                <controls:CustomShadowFrame
                                     Margin="0,2,5,5"
                                     Padding="0"
                                     BackgroundColor="{DynamicResource Gray-White}"
@@ -84,7 +57,7 @@
                                     HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand">
                                     <template:NavigationListTemplate />
-                                </controls:CustomShadowFrame>-->
+                                </controls:CustomShadowFrame>
                             </ViewCell>
                         </DataTemplate>
                     </listView:SfListView.ItemTemplate>

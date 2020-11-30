@@ -126,6 +126,39 @@
 
                 <BoxView Style="{StaticResource SeparatorStyle}" />
 
+                <!--  Grid for Notes de crédit label and icon  -->
+                <Grid
+                    x:Name="NoteDeCreditGrid"
+                    BackgroundColor="{DynamicResource Gray-White}">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        helper:RTLHelper.Margin="16, 0, 8, 0"
+                        Style="{StaticResource ProfileIconLabelStyle}"/>
+                    <!--LOGO-->
+                    <!--Text="{StaticResource Interests}"-->
+
+                    <Label
+                        Grid.Column="1"
+                        Margin="0,20"
+                        FontFamily="{StaticResource Montserrat-SemiBold}"
+                        FontSize="17"
+                        Style="{StaticResource ProfileLabelStyle}"
+                        Text="Notes de crédit" />
+
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NoteDeCreditCommand}" CommandParameter="{x:Reference NoteDeCreditGrid}" />
+                    </Grid.GestureRecognizers>
+
+                </Grid>
+
+                <BoxView Style="{StaticResource SeparatorStyle}" />
+
                 <!--  Grid for Brouillons label and icon  -->
                 <Grid
                     x:Name="BrouillonsGrid"

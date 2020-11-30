@@ -74,6 +74,9 @@
     <Compile Update="Views\FacturesNav\FacturesListe.xaml.cs">
       <DependentUpon>FacturesListe.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\NoteDeCreditNav\NoteDeCreditListe.xaml.cs">
+      <DependentUpon>NoteDeCreditListe.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\PageConditions\PageConditionsPage.xaml.cs">
       <DependentUpon>PageConditionsPage.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,12 @@
     <EmbeddedResource Update="Views\CreationFacture\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\CreationNoteDeCredit\BusinessRegistrationFormPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CreationNoteDeCredit\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\DevisNav\DevisListe.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -159,6 +168,12 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Login\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NoteDeCreditNav\NoteDeCreditListe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NoteDeCreditNav\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PageConditions\PageConditionsPage.xaml">

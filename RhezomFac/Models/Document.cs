@@ -17,15 +17,15 @@ namespace RhezomFac.Models
             set { _logo = value; }
         }
 
-        /// <value>
-        /// _date : représente la date de création de la facture
-        /// </value>
-        private DateTime _date;
+        /// <summary>
+        /// voir si get est bon
+        /// </summary>
+        private DateTime _dateEmission;
 
-        public DateTime Date
+        public DateTime DateEmission
         {
-            get { return _date; }
-            set { _date = value; }
+            get { return DateTime.Today; }
+            set { _dateEmission = value; }
         }
 
         private string _numTVAClient;
@@ -140,9 +140,13 @@ namespace RhezomFac.Models
             set { _lienWeb = value; }
         }
 
-        private List<string> _listeProd;
 
-        public List<string> ListeProd
+        /// <summary>
+        /// liste de produits
+        /// </summary>
+        private List<Produit> _listeProd;
+
+        public List<Produit> ListeProd
         {
             get { return _listeProd; }
             set { _listeProd = value; }
@@ -150,12 +154,18 @@ namespace RhezomFac.Models
 
         private int _qtiteProd;
 
+        /// <summary>
+        /// à vérif la fct count
+        /// </summary>
         public int QtiteProd
         {
-            get { return _qtiteProd; }
+            get { return ListeProd.Count; }
             set { _qtiteProd = value; }
         }
 
+        /// <summary>
+        /// Mettre le calcul en place :
+        /// </summary>
         private float _totalHT;
 
         public float TotalHT
@@ -180,21 +190,13 @@ namespace RhezomFac.Models
             set { _infoAdd = value; }
         }
 
-        private DateTime _dateEmission;
-
-        public DateTime DateEmission
-        {
-            get { return _dateEmission; }
-            set { _dateEmission = value; }
-        }
-
         #endregion
 
         #region constructeur(s)
         //constr par def
         public Document() { }
         public Document(string logo,
-                        DateTime date,
+                        DateTime dateEmission,
                         string numTVAClient,
                         string numTVAEntr,
                         string adrClient,
@@ -209,15 +211,15 @@ namespace RhezomFac.Models
                         string mailEntr,
                         string mailClient,
                         string lienWeb,
-                        List<string> listeProd,
+                        List<Produit> listeProd,
                         int qtiteProd,
                         float totalHT,
                         float totalTVA,
-                        string infoAdd,
-                        DateTime dateEmission)
+                        string infoAdd
+                        )
         {
             this._logo = logo;
-            this._date = date;
+            this._dateEmission = dateEmission;
             this._numTVAClient = numTVAClient;
             this._numTVAEntr = numTVAEntr; //client final
             this._adrClient = adrClient;
@@ -237,7 +239,6 @@ namespace RhezomFac.Models
             this._totalHT = totalHT;
             this._totalTVA = totalTVA;
             this._infoAdd = infoAdd;
-            this._dateEmission = dateEmission;
         }
         #endregion
 

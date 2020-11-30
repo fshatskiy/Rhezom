@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RhezomFac.Models;
+using RhezomFac.Services;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Xamarin.Forms;
@@ -182,7 +184,7 @@ namespace RhezomFac.ViewModels.CreationDevis
         private async void SubmitClicked(Object obj)
         {
             Debug.WriteLine("Enregistrer clicked");
-            await App.Current.MainPage.Navigation.PopAsync();
+            await App.Current.MainPage.Navigation.PopAsync(); //Retroune vers la page principale des devis
         }
 
         #endregion

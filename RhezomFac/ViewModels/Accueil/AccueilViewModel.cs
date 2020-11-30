@@ -3,6 +3,7 @@ using RhezomFac.Views.BrouillonsNav;
 using RhezomFac.Views.DevisNav;
 using RhezomFac.Views.DonneesEntreprise;
 using RhezomFac.Views.FacturesNav;
+using RhezomFac.Views.NoteDeCreditNav;
 using RhezomFac.Views.Parametres;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -36,6 +37,7 @@ namespace RhezomFac.ViewModels.Accueil
 
             this.DevisCommand = new Command(this.DevisButtonClicked);
             this.FacturesCommand = new Command(this.FacturesButtonClicked);
+            this.NoteDeCreditCommand = new Command(this.NoteDeCreditButtonClicked);
             this.BrouillonsCommand = new Command(this.BrouillonsButtonClicked);
             this.ParamCommand = new Command(this.ParamButtonClicked);
             this.EntrDataCommand = new Command(this.EntrDataButtonClicked);
@@ -59,6 +61,11 @@ namespace RhezomFac.ViewModels.Accueil
         /// Gets or sets the command that is executed when the interests view is clicked.
         /// </summary>
         public Command FacturesCommand { get; set; }
+
+        /// <summary>
+        /// Gets or sets the command that is executed when the interests view is clicked.
+        /// </summary>
+        public Command NoteDeCreditCommand { get; set; }
 
         /// <summary>
         /// Gets or sets the command that is executed when the bookmark view is clicked.
@@ -104,6 +111,17 @@ namespace RhezomFac.ViewModels.Accueil
             this.UpdateSelectedItemColor(obj);
             Debug.WriteLine("Factures clicked");
             await App.Current.MainPage.Navigation.PushAsync(new FacturesListe());
+        }
+
+        /// <summary>
+        /// Invoked when the NoteDeCredit button is clicked.
+        /// </summary>
+        /// <param name="obj">The object</param>
+        private async void NoteDeCreditButtonClicked(object obj)
+        {
+            this.UpdateSelectedItemColor(obj);
+            Debug.WriteLine("NoteDeCredit clicked");
+            await App.Current.MainPage.Navigation.PushAsync(new NoteDeCreditListe());
         }
 
         /// <summary>

@@ -56,7 +56,7 @@
                 Text="{Binding ItemDescription}"
                 TextColor="{DynamicResource Gray-700}" />
 
-            <!--  Date  -->
+            <!--  Date  à mettre en place -->
             <StackLayout
                 HorizontalOptions="FillAndExpand"
                 Orientation="Horizontal"

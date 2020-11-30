@@ -175,7 +175,7 @@ namespace RhezomFac.ViewModels.CreationFacture
         private async void SubmitClicked(Object obj)
         {
             Debug.WriteLine("Enregistrer clicked");
-            await App.Current.MainPage.Navigation.PopAsync();
+            await App.Current.MainPage.Navigation.PopAsync(); ////Retroune vers la page principale des devis
         }
 
         #endregion
