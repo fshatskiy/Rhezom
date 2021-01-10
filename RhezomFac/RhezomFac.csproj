@@ -23,17 +23,17 @@
   <ItemGroup>
     <PackageReference Include="SkiaSharp.Extended" Version="1.60.0" />
     <PackageReference Include="SkiaSharp.Svg" Version="1.60.0" />
-    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.1" />
-    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.2.0.55" />
-    <PackageReference Include="Syncfusion.Xamarin.Cards" Version="18.2.0.55" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.2.0.55" />
-    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="18.2.0.55" />
-    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.2.0.55" />
-    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="18.2.0.55" />
-    <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="18.2.0.55" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.3.0.53" />
+    <PackageReference Include="Syncfusion.Xamarin.Cards" Version="18.3.0.53" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.3.0.53" />
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="18.3.0.53" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.3.0.53" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="18.3.0.53" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="18.3.0.53" />
     <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
-    <PackageReference Include="System.Text.Json" Version="4.7.2" />
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 

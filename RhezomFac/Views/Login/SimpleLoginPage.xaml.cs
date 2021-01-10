@@ -37,6 +37,7 @@ namespace RhezomFac.Views.Login
             else
             {
                 LabelConnection.Text = "Vous êtes hors ligne";
+                LabelConnection.TextColor = Color.Red;
                 LabelConnection.FadeTo(1).ContinueWith((result) => { });
             }
         }

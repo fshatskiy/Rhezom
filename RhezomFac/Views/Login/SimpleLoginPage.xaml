@@ -77,7 +77,6 @@
                         HorizontalTextAlignment="Center"
                         Style="{StaticResource LabelStyle}"
                         Text=""
-                        TextColor="{DynamicResource Red}"
                         x:Name="LabelConnection" />
 
                     <!--  Entry to get email ID from user  -->

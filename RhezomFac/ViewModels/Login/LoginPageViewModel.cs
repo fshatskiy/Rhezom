@@ -99,6 +99,9 @@ namespace RhezomFac.ViewModels.Login
             // Do something
             Debug.WriteLine("Login clicked");
 
+            // call function to call webservices
+            // getusernameandpasswordastrueorfalse = new MyWebServices(Email, Password);
+
             if (string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Password))
             {
                 await App.Current.MainPage.DisplayAlert("Champs vides", "Veuillez indiquer votre adresse mail et votre mot de passe pour vous connecter", "Ok");
@@ -111,15 +114,6 @@ namespace RhezomFac.ViewModels.Login
             {
                 await App.Current.MainPage.Navigation.PushAsync(new AccueilPage()); //while testing
             }
-
-            //Conditions
-            //var isValid = true;
-
-            //if (string.IsNullOrEmpty(Password) || Password.Length < 6)
-            //{
-            //    VisualStateManager.GoToState(getPassword(), "Invalide");
-            //}
-            //await App.Current.MainPage.Navigation.PushAsync(new AccueilPage()); //while testing
         }
 
         /// <summary>

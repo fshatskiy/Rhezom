@@ -4,58 +4,40 @@ using System.Text;
 
 namespace RhezomFac.Models
 {
-    public class Personne
+    class Personne
     {
-
-        #region variables
+        private string _nom;
+        private string _prenom;
         private string _adresse;
-
-        public string Adresse
-        {
-            get { return _adresse; }
-            set { _adresse = value; }
-        }
-
         private string _mail;
-
-        public string Mail
-        {
-            get { return _mail; }
-            set { _mail = value; }
-        }
-
         private string _tel;
+        private string _numTVA;
 
-        public string Tel
+        public string Nom { get => _nom; set => _nom = value; }
+        public string Prenom { get => _prenom; set => _prenom = value; }
+        public string Adresse { get => _adresse; set => _adresse = value; }
+        public string Mail { get => _mail; set => _mail = value; }
+        public string Tel { get => _tel; set => _tel = value; }
+        public string NumTVA { get => _numTVA; set => _numTVA = value; }
+
+        public Personne(string nom, string prenom, string adresse, string mail, string tel, string numTVA)
         {
-            get { return _tel; }
-            set { _tel = value; }
+            _nom = nom;
+            _prenom = prenom;
+            _adresse = adresse;
+            _mail = mail;
+            _tel = tel;
+            _numTVA = numTVA;
         }
 
-        //par defaut = null
-        // val readonly = en lecture seule partout ailleurs à part le constructeur
-        private readonly string _numTVA = null;
-
-
-        #endregion
-
-        #region constructeur
-        public Personne(string adresse,
-                        string mail,
-                        string tel,
-                        string numTVA)
+        public void ChangerAdresse()
         {
-            this._adresse = adresse;
-            this._mail = mail;
-            this._tel = tel;
-            this._numTVA = numTVA;
+
         }
-        #endregion
 
-        #region methodes
+        public void ModifInfos()
+        {
 
-
-
-        #endregion
+        }
     }
 }

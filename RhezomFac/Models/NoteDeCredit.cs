@@ -4,44 +4,31 @@ using System.Text;
 
 namespace RhezomFac.Models
 {
-    class NoteDeCredit : Document
+    class NoteDeCredit
     {
+        private DateTime _dateEmission;
+        private string _infoAdd;
+        private string _refNote;
 
-        #region variables
+        public DateTime DateEmission { get => _dateEmission; set => _dateEmission = value; }
+        public string InfoAdd { get => _infoAdd; set => _infoAdd = value; }
+        public string RefNote { get => _refNote; set => _refNote = value; }
 
-        #endregion
+        public NoteDeCredit(DateTime dateEmission, string infoAdd, string refNote)
+        {
+            _dateEmission = dateEmission;
+            _infoAdd = infoAdd;
+            _refNote = refNote;
+        }
 
-        #region constructeur
-        public NoteDeCredit(
-                       string logo,
-                       DateTime dateEmission,
-                       string numTVAClient,
-                       string numTVAEntr,
-                       string adrClient,
-                       string adrEntr,
-                       string pays,
-                       string bCE,
-                       string iBAN,
-                       string bIC,
-                       string numTelFixe,
-                       string numMobile,
-                       string numFax,
-                       string mailEntr,
-                       string mailClient,
-                       string lienWeb,
-                       List<Produit> listeProd,
-                       int qtiteProd,
-                       float totalHT,
-                       float totalTVA,
-                       string infoAdd)
-            : base(logo, dateEmission, numTVAClient, numTVAEntr, adrClient, adrEntr, pays, bCE, iBAN, bIC, numTelFixe, numMobile, numFax, mailEntr, mailClient, lienWeb, listeProd, qtiteProd, totalHT, totalTVA, infoAdd)
+        public void Total()
         {
 
         }
-        #endregion
 
-        #region methodes
+        public void CreerNote()
+        {
 
-        #endregion
+        }
     }
 }

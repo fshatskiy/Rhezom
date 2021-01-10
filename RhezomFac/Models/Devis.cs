@@ -4,65 +4,26 @@ using System.Text;
 
 namespace RhezomFac.Models
 {
-    public class Devis : Document
+    class Devis : Document
     {
-
-
-        #region variables
         private DateTime _dateValidite;
 
-        public DateTime DateValidite
+        public DateTime DateValidite { get => _dateValidite; set => _dateValidite = value; }
+
+        public Devis(DateTime dateValidite, DateTime dateEmission, string infoAdd, string reference)
+            : base( dateEmission,  infoAdd,  reference)
         {
-            get { return _dateValidite; }
-            set { _dateValidite = value; }
+            _dateValidite = dateValidite;
         }
 
-        private int _statut;
-
-        public int Statut
+        public void statut(bool signe, bool resilie, DateTime dateDebut, DateTime dateFin)
         {
-            get { return _statut; }
-            set { _statut = value; }
+
         }
 
-
-
-        #endregion
-
-        #region constructor
-        public Devis(DateTime dateValidite,
-                     int statut,
-                     string logo,
-                     DateTime dateEmission,
-                     string numTVAClient,
-                     string numTVAEntr,
-                     string adrClient,
-                     string adrEntr,
-                     string pays,
-                     string bCE,
-                     string iBAN,
-                     string bIC,
-                     string numTelFixe,
-                     string numMobile,
-                     string numFax,
-                     string mailEntr,
-                     string mailClient,
-                     string lienWeb,
-                     List<Produit> listeProd,
-                     int qtiteProd,
-                     float totalHT,
-                     float totalTVA,
-                     string infoAdd)
-            : base(logo, dateEmission, numTVAClient, numTVAEntr, adrClient, adrEntr, pays, bCE, iBAN, bIC, numTelFixe, numMobile, numFax, mailEntr, mailClient, lienWeb, listeProd, qtiteProd, totalHT, totalTVA, infoAdd)
+        public void SauverBrouillons()
         {
-            this._dateValidite = dateValidite;
-            this._statut = statut;
+
         }
-
-        #endregion
-
-        #region methodes
-
-        #endregion
     }
 }

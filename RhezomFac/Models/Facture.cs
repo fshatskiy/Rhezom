@@ -6,51 +6,19 @@ namespace RhezomFac.Models
 {
     class Facture : Document
     {
-
-        #region variables
-
         private DateTime _dateEcheance;
 
-        public DateTime DateEcheance
+        public DateTime DateEcheance { get => _dateEcheance; set => _dateEcheance = value; }
+
+        public Facture(DateTime dateEcheance, DateTime dateEmission, string infoAdd, string reference)
+            : base( dateEmission,  infoAdd,  reference)
         {
-            get { return _dateEcheance; }
-            set { _dateEcheance = value; }
+            _dateEcheance = dateEcheance;
         }
 
-        #endregion
-
-        #region constructeur
-        public Facture(DateTime dateEcheance,
-                       string logo,
-                       DateTime dateEmission,
-                       string numTVAClient,
-                       string numTVAEntr,
-                       string adrClient,
-                       string adrEntr,
-                       string pays,
-                       string bCE,
-                       string iBAN,
-                       string bIC,
-                       string numTelFixe,
-                       string numMobile,
-                       string numFax,
-                       string mailEntr,
-                       string mailClient,
-                       string lienWeb,
-                       List<Produit> listeProd,
-                       int qtiteProd,
-                       float totalHT,
-                       float totalTVA,
-                       string infoAdd)
-            : base(logo, dateEmission, numTVAClient, numTVAEntr, adrClient, adrEntr, pays, bCE, iBAN, bIC, numTelFixe, numMobile, numFax, mailEntr, mailClient, lienWeb, listeProd, qtiteProd, totalHT, totalTVA, infoAdd)
+        public void RetardPaiement()
         {
-            this._dateEcheance = dateEcheance;
+
         }
-        #endregion
-
-        #region methodes
-
-        #endregion
-
     }
 }

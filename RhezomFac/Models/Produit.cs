@@ -4,72 +4,40 @@ using System.Text;
 
 namespace RhezomFac.Models
 {
-    public class Produit
+    class Produit
     {
-
-
-        #region variables
         private string _nom;
-
-        public string Nom
-        {
-            get { return _nom; }
-            set { _nom = value; }
-        }
-
         private string _description;
-
-        public string Description
-        {
-            get { return _description; }
-            set { _description = value; }
-        }
-
         private int _qtiteRest;
-
-        public int QtiteRest
-        {
-            get { return _qtiteRest; }
-            set { _qtiteRest = value; }
-        }
-
+        private float _tVA;
         private float _prixHT;
+        private bool _estActif;
 
-        public float PrixHT
+        public string Nom { get => _nom; set => _nom = value; }
+        public string Description { get => _description; set => _description = value; }
+        public int QtiteRest { get => _qtiteRest; set => _qtiteRest = value; }
+        public float TVA { get => _tVA; set => _tVA = value; }
+        public float PrixHT { get => _prixHT; set => _prixHT = value; }
+        public bool EstActif { get => _estActif; set => _estActif = value; }
+
+        public Produit(string nom, string description, int qtiteRest, float tVA, float prixHT, bool estActif)
         {
-            get { return _prixHT; }
-            set { _prixHT = value; }
+            _nom = nom;
+            _description = description;
+            _qtiteRest = qtiteRest;
+            _tVA = tVA;
+            _prixHT = prixHT;
+            _estActif = estActif;
         }
 
-        private float _tauxTVA;
-
-        public float TauxTVA
+        public void AjouterProd()
         {
-            get { return _tauxTVA; }
-            set { _tauxTVA = value; }
+
         }
 
-
-
-
-        #endregion
-
-        #region constructeur
-        public Produit(string nom,
-                       string description,
-                       int qtiteRest,
-                       float prixHT,
-                       float tauxTVA)
+        public void SuppProd()
         {
-            this._nom = nom;
-            this._description = description;
-            this._qtiteRest = qtiteRest;
-            this._prixHT = prixHT;
-            this._tauxTVA = tauxTVA;
-        }
-        #endregion
 
-        #region methodes
-        #endregion
+        }
     }
 }

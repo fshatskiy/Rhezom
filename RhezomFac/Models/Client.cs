@@ -4,56 +4,24 @@ using System.Text;
 
 namespace RhezomFac.Models
 {
-    public class Client : Personne
+    class Client : Personne
     {
-        #region variables
-        private string _nom;
-
-        public string Nom
-        {
-            get { return _nom; }
-            set { _nom = value; }
-        }
-
-        private string _prenom;
-
-        public string Prenom
-        {
-            get { return _prenom; }
-            set { _prenom = value; }
-        }
-
         private int _numClient;
+        private bool _estActif;
 
-        public int NumClient
+        public int NumClient { get => _numClient; set => _numClient = value; }
+        public bool EstActif { get => _estActif; set => _estActif = value; }
+
+        public Client(int numClient, bool estActif, string nom, string prenom, string adresse, string mail, string tel, string numTVA)
+            : base(nom, prenom, adresse, mail, tel, numTVA)
         {
-            get { return _numClient; }
-            set { _numClient = value; }
+            _numClient = numClient;
+            _estActif = estActif;
         }
 
-
-        #endregion
-
-        #region constructeur
-        public Client(string nom,
-                      string prenom,
-                      int numClient,
-                      string adresse,
-                      string mail,
-                      string tel,
-                      string numTVA)
-            : base(adresse,
-                    mail,
-                    tel,
-                    numTVA)
+        public void Etat()
         {
-            this._nom = nom;
-            this._prenom = prenom;
-            this._numClient = numClient;
-        }
-        #endregion
 
-        #region methodes
-        #endregion
+        }
     }
 }

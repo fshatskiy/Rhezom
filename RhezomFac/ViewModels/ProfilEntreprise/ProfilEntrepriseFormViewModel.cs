@@ -91,12 +91,6 @@ namespace RhezomFac.ViewModels.ProfilEntreprise
         /// </summary>
         public string LienWeb { get; set; }
 
-        /// <summary>
-        /// Gets or sets the property that bounds with an entry that gets the City from user.
-        /// + max caract : possible de ne rien avoir
-        /// </summary>
-        public string InfoAdd { get; set; }
-
         #endregion
 
         #region Comments
@@ -117,6 +111,19 @@ namespace RhezomFac.ViewModels.ProfilEntreprise
         private async void SubmitClicked(Object obj)
         {
             Debug.WriteLine("Brouillons clicked");
+
+            if (string.IsNullOrEmpty(NumTVAEntr) ||
+                string.IsNullOrEmpty(AdrEntr) ||
+                string.IsNullOrEmpty(BCE) ||
+                string.IsNullOrEmpty(IBAN) ||
+                string.IsNullOrEmpty(BIC) ||
+                string.IsNullOrEmpty(NumMobile) ||
+                string.IsNullOrEmpty(MailEntr) ||
+                string.IsNullOrEmpty(LienWeb))
+            {
+                await App.Current.MainPage.DisplayAlert("Champs vides", "Veuillez remplir tous les champs nécessaires pour l'inscription", "Ok");
+            }
+
             await App.Current.MainPage.Navigation.PopAsync(); //pr le moment retourne juste en arriere
         }
 
